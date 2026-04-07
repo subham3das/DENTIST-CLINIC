@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Inter:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-primary": "#b38bfe",
+                    "tertiary": "#4f5d6e",
+                    "outline": "#747779",
+                    "secondary-container": "#69f9e6",
+                    "on-secondary-container": "#005c54",
+                    "surface-bright": "#f5f7f9",
+                    "error-container": "#f74b6d",
+                    "surface-tint": "#6c44b2",
+                    "on-surface-variant": "#595c5e",
+                    "tertiary-dim": "#435162",
+                    "outline-variant": "#abadaf",
+                    "on-secondary-fixed": "#004841",
+                    "on-primary-fixed-variant": "#3a0380",
+                    "primary-fixed-dim": "#a67eef",
+                    "on-surface": "#2c2f31",
+                    "background": "#f5f7f9",
+                    "secondary": "#00675e",
+                    "surface-container-low": "#eef1f3",
+                    "surface": "#f5f7f9",
+                    "surface-container-highest": "#d9dde0",
+                    "error": "#b41340",
+                    "primary-dim": "#5f37a5",
+                    "on-error": "#ffefef",
+                    "tertiary-fixed-dim": "#cad8ed",
+                    "on-error-container": "#510017",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-variant": "#d9dde0",
+                    "tertiary-container": "#d8e6fc",
+                    "primary-container": "#b38bfe",
+                    "inverse-surface": "#0b0f10",
+                    "on-primary-container": "#2f006a",
+                    "on-primary": "#f8efff",
+                    "on-primary-fixed": "#000000",
+                    "on-secondary": "#c0fff4",
+                    "tertiary-fixed": "#d8e6fc",
+                    "secondary-dim": "#005a52",
+                    "surface-dim": "#d0d5d8",
+                    "inverse-on-surface": "#9a9d9f",
+                    "on-tertiary-fixed": "#354253",
+                    "on-tertiary": "#edf3ff",
+                    "on-background": "#2c2f31",
+                    "error-dim": "#a70138",
+                    "on-tertiary-fixed-variant": "#515e70",
+                    "surface-container-high": "#dfe3e6",
+                    "secondary-fixed": "#69f9e6",
+                    "primary-fixed": "#b38bfe",
+                    "on-tertiary-container": "#475466",
+                    "secondary-fixed-dim": "#59ead8",
+                    "primary": "#6c44b2",
+                    "surface-container": "#e5e9eb",
+                    "on-secondary-fixed-variant": "#00675e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Manrope"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-effect {
+        backdrop-filter: blur(20px);
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface">
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full z-50 bg-slate-50/70 dark:bg-slate-900/70 backdrop-blur-xl shadow-[0_10px_40px_rgba(108,68,178,0.06)]">
+<nav class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-slate-900 dark:text-white font-headline">Clinical Radiance</div>
+<div class="hidden md:flex gap-8 items-center font-manrope tracking-tight font-semibold">
+<a class="text-slate-600 dark:text-slate-400 hover:text-purple-500 transition-colors" href="#">Home</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-purple-500 transition-colors" href="#">Services</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-purple-500 transition-colors" href="#">Our Mission</a>
+<a class="text-purple-700 dark:text-purple-300 border-b-2 border-purple-500 pb-1" href="#">Book Appointment</a>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-full font-headline font-bold scale-95 duration-200 ease-in-out hover:scale-100 shadow-lg">
+                Book Appointment
+            </button>
+</nav>
+</header>
+<main class="max-w-screen-2xl mx-auto px-6 py-12 md:py-24">
+<!-- Hero Title Section -->
+<div class="mb-16 max-w-3xl">
+<span class="text-primary font-label font-bold text-xs tracking-widest uppercase mb-4 block">Connect with Radiance</span>
+<h1 class="text-display-lg text-5xl md:text-7xl font-headline font-extrabold tracking-tight text-on-surface mb-6">Your Journey to a Perfect Smile Starts Here.</h1>
+<p class="text-on-surface-variant text-lg md:text-xl leading-relaxed">Experience dentistry redefined. From the moment you reach out, our focus is your comfort, health, and a luminous result that speaks for itself.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left: Appointment Form -->
+<section class="lg:col-span-7 bg-surface-container-lowest p-8 md:p-12 rounded-xl shadow-[0_40px_80px_rgba(108,68,178,0.04)] relative overflow-hidden">
+<!-- Decorative element -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary-container/20 rounded-full blur-3xl"></div>
+<h2 class="text-3xl font-headline font-bold text-on-surface mb-8">Book Your Appointment</h2>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col space-y-2">
+<label class="text-label-md font-label font-semibold text-on-surface-variant ml-1">Full Name</label>
+<input class="bg-surface-container-high rounded-md p-4 focus:ring-2 focus:ring-primary/20 focus:outline-none border-none transition-all duration-300" placeholder="John Doe" type="text"/>
+</div>
+<div class="flex flex-col space-y-2">
+<label class="text-label-md font-label font-semibold text-on-surface-variant ml-1">Phone Number</label>
+<input class="bg-surface-container-high rounded-md p-4 focus:ring-2 focus:ring-primary/20 focus:outline-none border-none transition-all duration-300" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+<div class="flex flex-col space-y-2 md:col-span-2">
+<label class="text-label-md font-label font-semibold text-on-surface-variant ml-1">Email Address</label>
+<input class="bg-surface-container-high rounded-md p-4 focus:ring-2 focus:ring-primary/20 focus:outline-none border-none transition-all duration-300" placeholder="hello@clinicalradiance.com" type="email"/>
+</div>
+<div class="flex flex-col space-y-2">
+<label class="text-label-md font-label font-semibold text-on-surface-variant ml-1">Service Type</label>
+<select class="bg-surface-container-high rounded-md p-4 focus:ring-2 focus:ring-primary/20 focus:outline-none border-none transition-all duration-300 appearance-none">
+<option>Cosmetic Dentistry</option>
+<option>Orthodontics</option>
+<option>Oral Surgery</option>
+<option>General Checkup</option>
+</select>
+</div>
+<div class="flex flex-col space-y-2">
+<label class="text-label-md font-label font-semibold text-on-surface-variant ml-1">Preferred Date &amp; Time</label>
+<input class="bg-surface-container-high rounded-md p-4 focus:ring-2 focus:ring-primary/20 focus:outline-none border-none transition-all duration-300" type="datetime-local"/>
+</div>
+<div class="md:col-span-2 pt-4">
+<p class="text-sm text-on-surface-variant mb-6 italic">We will call or email you within 24 hours to confirm your final slot.</p>
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary py-5 rounded-full font-headline font-extrabold text-lg shadow-lg hover:shadow-primary/20 transition-all active:scale-[0.98]" type="submit">
+                            Schedule My Consultation
+                        </button>
+</div>
+</form>
+</section>
+<!-- Right: Contact Info & Map -->
+<aside class="lg:col-span-5 space-y-8">
+<!-- Contact Card -->
+<div class="bg-surface-container-low p-8 rounded-xl space-y-8">
+<div class="flex items-start gap-4">
+<div class="bg-primary/10 p-3 rounded-full text-primary">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+</div>
+<div>
+<h3 class="text-xl font-headline font-bold mb-1">Our Studio</h3>
+<p class="text-on-surface-variant leading-relaxed">888 Radiance Boulevard, Suite 100<br/>Modern Medical District, CA 90210</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="bg-primary/10 p-3 rounded-full text-primary">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+</div>
+<div>
+<h3 class="text-xl font-headline font-bold mb-1">Direct Line</h3>
+<p class="text-on-surface-variant">+1 (555) RADIANCE</p>
+<p class="text-primary font-bold text-sm">Emergency: +1 (555) 911-SMILE</p>
+</div>
+</div>
+<!-- Map Container -->
+<div class="w-full h-64 rounded-lg overflow-hidden grayscale contrast-[1.1] shadow-inner relative group">
+<img class="w-full h-full object-cover" data-alt="abstract minimalist map representation of a clean urban medical district with soft purple accent markers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYMuNKdo5tX0IP5KsR_vZLtvAR2bXi7037HiWrODkJDBw2ikaKInd9Ei000NY37ZuiGw0s248ajw16huaPYIuX2it_KsttsbNMBjH3mWXebdmHIQ66vpcL6BpfACzylS8ghoTg-1DbPpAPzLygxa9sjbEhVbHINEIS76ZIctvj5QDInfh9-va0jlJRH5NZ3X3bf-CxHW1DolF8OjuNwkOSw5MUZtj3_ybDsHMb6O8bfYqrSDJhNoKSiFbbT4QbzjDos9H3og2DQ48"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+<div class="bg-primary p-3 rounded-full shadow-2xl animate-pulse">
+<span class="material-symbols-outlined text-white" data-icon="hospital" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_hospital</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Hours Section -->
+<div class="bg-surface-container-lowest border border-outline-variant/10 p-8 rounded-xl">
+<h3 class="text-2xl font-headline font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="schedule">schedule</span>
+                        Clinic Hours
+                    </h3>
+<ul class="space-y-4">
+<li class="flex justify-between items-center pb-3 border-b border-outline-variant/10">
+<span class="font-semibold">Monday — Thursday</span>
+<span class="text-on-surface-variant">8:00 AM – 7:00 PM</span>
+</li>
+<li class="flex justify-between items-center pb-3 border-b border-outline-variant/10">
+<span class="font-semibold">Friday</span>
+<span class="text-on-surface-variant">8:00 AM – 4:00 PM</span>
+</li>
+<li class="flex justify-between items-center pb-3 border-b border-outline-variant/10">
+<span class="font-semibold text-primary">Saturday</span>
+<span class="text-primary font-bold">10:00 AM – 2:00 PM</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="font-semibold text-on-surface-variant">Sunday</span>
+<span class="text-on-surface-variant/50">Closed</span>
+</li>
+</ul>
+</div>
+</aside>
+</div>
+<!-- Reassurance Bento Grid -->
+<section class="mt-24 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="p-8 rounded-xl bg-secondary-container/20 flex flex-col gap-4">
+<span class="material-symbols-outlined text-secondary text-4xl" data-icon="shield_check">shield</span>
+<h4 class="text-xl font-headline font-bold">Safe &amp; Sterile</h4>
+<p class="text-sm text-on-secondary-container">Our clinic exceeds all modern sanitization protocols for your absolute peace of mind.</p>
+</div>
+<div class="p-8 rounded-xl bg-tertiary-container flex flex-col gap-4">
+<span class="material-symbols-outlined text-tertiary text-4xl" data-icon="psychology">psychology</span>
+<h4 class="text-xl font-headline font-bold">Anxiety-Free Care</h4>
+<p class="text-sm text-on-tertiary-container">Specialized sedation and relaxation techniques designed for sensitive patients.</p>
+</div>
+<div class="p-8 rounded-xl bg-primary-container/20 flex flex-col gap-4">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="verified">verified</span>
+<h4 class="text-xl font-headline font-bold">Elite Technology</h4>
+<p class="text-sm text-on-primary-container">We utilize 3D imaging and laser precision for results that are as accurate as they are beautiful.</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[3rem] mt-20 bg-slate-100 dark:bg-slate-950">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 gap-8 w-full max-w-screen-2xl mx-auto">
+<div class="flex flex-col gap-4">
+<div class="text-lg font-bold text-slate-800 dark:text-slate-200 font-headline">Clinical Radiance</div>
+<p class="font-manrope text-sm font-medium text-slate-500 dark:text-slate-400 opacity-80 max-w-xs">The Ethereal Clinic Experience. Shaping the future of smiles with scientific elegance.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6 md:gap-12">
+<div class="flex flex-col gap-3">
+<h5 class="text-primary font-bold text-xs uppercase tracking-tighter">Specialties</h5>
+<a class="font-manrope text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-purple-500 hover:translate-y-[-2px] transition-all" href="#">Cosmetic Dentistry</a>
+<a class="font-manrope text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-purple-500 hover:translate-y-[-2px] transition-all" href="#">Oral Surgery</a>
+<a class="font-manrope text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-purple-500 hover:translate-y-[-2px] transition-all" href="#">Orthodontics</a>
+</div>
+<div class="flex flex-col gap-3">
+<h5 class="text-primary font-bold text-xs uppercase tracking-tighter">Studio</h5>
+<a class="font-manrope text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-purple-500 hover:translate-y-[-2px] transition-all" href="#">About the Doctor</a>
+<a class="font-manrope text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-purple-500 hover:translate-y-[-2px] transition-all" href="#">Privacy Policy</a>
+<a class="font-manrope text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-purple-500 hover:translate-y-[-2px] transition-all" href="#">Careers</a>
+</div>
+</div>
+<div class="text-center md:text-right">
+<div class="font-manrope text-sm font-medium text-slate-500 dark:text-slate-400 opacity-80 mb-4">© 2024 Clinical Radiance. The Ethereal Clinic Experience.</div>
+<div class="flex justify-center md:justify-end gap-4">
+<div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-slate-600 group-hover:text-white" data-icon="star">star</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-slate-600 group-hover:text-white" data-icon="share">share</span>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

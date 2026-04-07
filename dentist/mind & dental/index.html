@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title> Dr.  Veena Mattu | General Physician</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'DM Sans',sans-serif;background:#faf8f4;color:#2d2d2d;overflow-x:hidden;line-height:1.6}
+img{display:block;max-width:100%;height:auto}
+a{text-decoration:none;color:inherit}
+button{font-family:'DM Sans',sans-serif;cursor:pointer}
+
+:root{
+  --cream:#faf8f4;--white:#fff;--navy:#1a2840;
+  --teal:#2a7c76;--gold:#c8a96e;
+  --muted:#7a7a7a;--border:#e8e2d8;
+  --fd:'Cormorant Garamond',Georgia,serif;
+  --nav-h:62px;
+}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);background:rgba(250,248,244,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+nav.scrolled{box-shadow:0 4px 24px rgba(26,40,64,.09)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 16px;height:100%;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:9px}
+.logo-icon{width:34px;height:34px;background:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-icon svg{width:17px;height:17px;fill:white}
+.logo-text{display:flex;flex-direction:column;line-height:1.1}
+.logo-text .ln1{font-family:var(--fd);font-size:1.15rem;font-weight:600;color:var(--navy)}
+.logo-text .ln2{font-size:.57rem;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);font-weight:500}
+.nav-links{display:none;list-style:none;align-items:center;gap:26px}
+.nav-links a{font-size:.87rem;color:var(--navy);position:relative;transition:color .2s}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1.5px;background:var(--teal);transition:width .25s}
+.nav-links a:hover{color:var(--teal)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{background:var(--teal)!important;color:white!important;padding:9px 18px;border-radius:4px;font-weight:500!important}
+.nav-cta::after{display:none!important}
+.nav-cta:hover{background:var(--navy)!important}
+
+/* ── HAMBURGER ── */
+.hamburger{display:flex;flex-direction:column;justify-content:center;gap:5px;padding:7px;background:none;border:none;width:38px;height:38px;flex-shrink:0}
+.hamburger span{display:block;width:21px;height:2px;background:var(--navy);border-radius:2px;transition:transform .32s ease,opacity .32s ease;transform-origin:center}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ── MOBILE DRAWER ── */
+.mob-drawer{position:fixed;top:var(--nav-h);left:0;right:0;z-index:999;background:var(--white);border-bottom:2px solid var(--teal);box-shadow:0 16px 48px rgba(26,40,64,.14);overflow:hidden;max-height:0;opacity:0;transition:max-height .38s cubic-bezier(.4,0,.2,1),opacity .28s ease}
+.mob-drawer.open{max-height:560px;opacity:1}
+.mob-drawer-inner{padding:6px 0 18px}
+.mob-link{display:flex;align-items:center;gap:13px;padding:15px 20px;font-size:.97rem;color:var(--navy);border-bottom:1px solid #f2ede5;transition:background .15s,color .15s,padding-left .15s}
+.mob-link:hover{background:#f6f1e8;color:var(--teal);padding-left:26px}
+.mob-link .me{font-size:1.1rem;width:22px;text-align:center;flex-shrink:0}
+.mob-book{display:block;margin:14px 18px 0;background:var(--teal);color:white;text-align:center;padding:14px;border-radius:7px;font-weight:600;font-size:.96rem;transition:background .2s}
+.mob-book:hover{background:var(--navy)}
+.drawer-overlay{display:none;position:fixed;inset:0;z-index:998;background:rgba(26,40,64,.38);backdrop-filter:blur(2px)}
+.drawer-overlay.show{display:block}
+
+/* ── SHARED ── */
+section{padding:60px 16px}
+.si{max-width:1200px;margin:0 auto}
+.lbl{font-size:.69rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:9px}
+.ttl{font-family:var(--fd);font-size:1.9rem;font-weight:600;color:var(--navy);line-height:1.2}
+.ttl em{font-style:italic;color:var(--teal)}
+.sub{color:var(--muted);font-size:.93rem;line-height:1.8;margin-top:11px}
+.btn{display:inline-block;padding:12px 24px;border-radius:5px;font-size:.9rem;font-weight:500;border:none;transition:all .2s;cursor:pointer}
+.btn-t{background:var(--teal);color:white}
+.btn-t:hover{background:var(--navy);transform:translateY(-1px)}
+.btn-o{background:transparent;color:var(--navy);border:1.5px solid var(--navy)}
+.btn-o:hover{background:var(--navy);color:white}
+.btn-ow{background:transparent;color:white;border:1.5px solid rgba(255,255,255,.45)}
+.btn-ow:hover{border-color:white;background:rgba(255,255,255,.1)}
+.fi{opacity:0;transform:translateY(20px);transition:opacity .55s,transform .55s}
+.fi.vis{opacity:1;transform:none}
+
+/* ── HERO ── */
+.hero{padding-top:var(--nav-h);display:flex;flex-direction:column;min-height:100svh}
+.hero-img{width:100%;height:52vw;min-height:230px;max-height:360px;overflow:hidden;flex-shrink:0;position:relative}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,40,64,.1),rgba(26,40,64,.04))}
+.hero-content{flex:1;padding:32px 18px 48px;background:var(--cream);display:flex;flex-direction:column;justify-content:center}
+.badge{display:inline-flex;align-items:center;gap:7px;background:#edf6f5;color:var(--teal);font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:6px 13px;border-radius:20px;margin-bottom:16px;width:fit-content}
+.badge::before{content:'';width:6px;height:6px;background:var(--teal);border-radius:50%}
+.hero-content h1{font-family:var(--fd);font-size:2.3rem;font-weight:600;color:var(--navy);line-height:1.13;margin-bottom:14px}
+.hero-content h1 em{font-style:italic;color:var(--teal)}
+.hero-content p{font-size:.93rem;color:var(--muted);line-height:1.8;margin-bottom:24px}
+.h-actions{display:flex;gap:11px;flex-wrap:wrap}
+.h-actions .btn{padding:12px 22px}
+.h-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px 10px;margin-top:32px;padding-top:24px;border-top:1px solid var(--border)}
+.st-num{font-family:var(--fd);font-size:1.65rem;font-weight:600;color:var(--navy);line-height:1}
+.st-lbl{font-size:.73rem;color:var(--muted);margin-top:3px}
+
+/* ── TRUST TICKER ── */
+.ticker{padding:18px 0;background:var(--navy);overflow:hidden;white-space:nowrap}
+.ticker-content{display:inline-flex;align-items:center;animation:ticker 30s linear infinite}
+.ticker-content span{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:rgba(255,255,255,.45);margin:0 36px}
+.ticker-content span.dot{margin:0;color:var(--gold);font-size:.55rem}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── ABOUT ── */
+#about{background:var(--white)}
+.ab-grid{display:flex;flex-direction:column;gap:28px}
+.ab-imgs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ab-img{border-radius:9px;overflow:hidden;height:150px}
+.ab-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.ab-img:hover img{transform:scale(1.05)}
+.ab-img.tall{grid-row:span 2;height:100%}
+.ab-feats{display:flex;flex-direction:column;gap:13px;margin-top:22px}
+.af{display:flex;gap:11px;align-items:flex-start}
+.af-dot{width:7px;height:7px;background:var(--gold);border-radius:50%;margin-top:6px;flex-shrink:0}
+.af p{font-size:.88rem;line-height:1.7;color:#2d2d2d}
+.af p strong{color:var(--navy)}
+
+/* ── SERVICES ── */
+#services{background:var(--cream)}
+.sh{margin-bottom:28px}
+.svc-grid{display:grid;grid-template-columns:1fr;gap:18px}
+.svc-card{background:var(--white);border-radius:11px;overflow:hidden;border:1px solid var(--border);transition:transform .3s,box-shadow .3s}
+.svc-card:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(26,40,64,.08)}
+.svc-img{height:170px;overflow:hidden}
+.svc-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.svc-card:hover .svc-img img{transform:scale(1.06)}
+.svc-body{padding:18px 20px 22px}
+.svc-ico{width:38px;height:38px;background:#edf6f5;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.15rem;margin-bottom:10px}
+.svc-body h3{font-family:var(--fd);font-size:1.2rem;color:var(--navy);margin-bottom:7px;font-weight:600}
+.svc-body p{font-size:.84rem;color:var(--muted);line-height:1.75;margin-bottom:6px}
+.svc-price{font-size:.8rem;font-weight:600;color:var(--teal);margin-bottom:13px}
+.svc-lnk{font-size:.81rem;color:var(--teal);font-weight:500;display:inline-flex;align-items:center;gap:5px}
+.svc-lnk::after{content:'→';transition:transform .2s}
+.svc-lnk:hover::after{transform:translateX(4px)}
+
+/* ── GALLERY ── */
+#works{background:var(--navy);padding:60px 16px}
+#works .lbl{color:var(--gold)}
+#works .ttl{color:white}
+#works .sub{color:rgba(255,255,255,.55)}
+.wh{margin-bottom:24px}
+.whr{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:10px}
+.gtabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:20px}
+.tb{background:rgba(255,255,255,.08);color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.15);padding:6px 14px;border-radius:20px;font-family:'DM Sans',sans-serif;font-size:.76rem;cursor:pointer;transition:all .2s}
+.tb.active{background:var(--teal);color:white;border-color:var(--teal)}
+.tb:hover:not(.active){background:rgba(255,255,255,.14);color:white}
+.gal-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gi{border-radius:8px;overflow:hidden;height:140px;position:relative;cursor:pointer}
+.gi img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gi:hover img{transform:scale(1.07)}
+.gcap{position:absolute;bottom:0;left:0;right:0;padding:10px;background:linear-gradient(to top,rgba(26,40,64,.85),transparent);color:white;font-size:.73rem;font-weight:500;opacity:0;transition:opacity .3s}
+.gi:hover .gcap{opacity:1}
+
+/* ── DOCTORS ── */
+#doctors{background:var(--cream)}
+.doc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+.dc{background:var(--white);border-radius:11px;overflow:hidden;border:1px solid var(--border);transition:transform .3s,box-shadow .3s}
+.dc:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(26,40,64,.09)}
+.dc-img{height:170px;overflow:hidden}
+.dc-img img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s}
+.dc:hover .dc-img img{transform:scale(1.05)}
+.dc-info{padding:14px 14px 16px}
+.dc-info h3{font-family:var(--fd);font-size:1rem;font-weight:600;color:var(--navy);margin-bottom:3px}
+.dc-role{font-size:.73rem;color:var(--teal);font-weight:500}
+.dc-exp{font-size:.72rem;color:var(--muted);margin-top:5px;line-height:1.5}
+.dc-soc{display:flex;gap:6px;margin-top:9px}
+.dsb{width:26px;height:26px;border-radius:50%;background:var(--cream);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.65rem;color:var(--navy);transition:background .2s,color .2s;text-decoration:none}
+.dsb:hover{background:var(--teal);color:white}
+
+/* ── REVIEWS CAROUSEL ── */
+#testimonials{background:var(--white);overflow:hidden}
+.review-carousel{margin-top:32px;overflow:hidden}
+.review-track{display:flex;gap:20px;width:max-content;animation:slideRev 40s linear infinite}
+.review-track:hover{animation-play-state:paused}
+.tc{background:var(--cream);border-radius:11px;padding:24px 20px;border:1px solid var(--border);position:relative;width:340px;flex-shrink:0}
+.tc::before{content:'"';font-family:var(--fd);font-size:4rem;color:var(--teal);opacity:.12;position:absolute;top:6px;left:18px;line-height:1}
+.stars{display:flex;gap:2px;color:var(--gold);font-size:.83rem;margin-bottom:11px}
+.tc p{font-size:.86rem;line-height:1.8;color:#2d2d2d;margin-bottom:16px;font-style:italic}
+.ta{display:flex;align-items:center;gap:10px}
+.ta-av{width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0}
+.ta-av img{width:100%;height:100%;object-fit:cover}
+.ta-name{font-weight:600;font-size:.85rem;color:var(--navy)}
+.ta-tag{font-size:.71rem;color:var(--muted);margin-top:2px}
+@keyframes slideRev{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── FAQ ── */
+#faq{background:var(--cream)}
+.faq-list{max-width:800px;margin:2rem auto 0}
+.faq-item{border-bottom:1px solid var(--border);padding:1.1rem 0;cursor:pointer}
+.faq-q{display:flex;justify-content:space-between;font-weight:600;align-items:center;font-size:.92rem;color:var(--navy)}
+.faq-q .icon{transition:.3s;color:var(--teal);font-size:1.1rem;flex-shrink:0}
+.faq-a{max-height:0;overflow:hidden;transition:.4s;color:var(--muted);font-size:.88rem;line-height:1.7}
+.faq-item.open .faq-a{max-height:200px;padding-top:.7rem}
+.faq-item.open .icon{transform:rotate(45deg)}
+
+/* ── APPOINTMENT ── */
+#appointment{background:var(--white)}
+.apt-wrap{display:flex;flex-direction:column;gap:36px}
+.c-list{display:flex;flex-direction:column;gap:15px;margin-top:22px}
+.ci{display:flex;gap:13px;align-items:flex-start}
+.ci-ico{width:38px;height:38px;background:#edf6f5;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
+.ci strong{font-size:.81rem;font-weight:600;color:var(--navy);display:block}
+.ci span{font-size:.81rem;color:var(--muted);line-height:1.6}
+.af-form{background:var(--cream);border-radius:13px;padding:26px 18px;border:1px solid var(--border);box-shadow:0 6px 28px rgba(26,40,64,.06)}
+.af-form h3{font-family:var(--fd);font-size:1.45rem;color:var(--navy);margin-bottom:4px}
+.af-form>p{font-size:.83rem;color:var(--muted);margin-bottom:20px}
+.fg{display:flex;flex-direction:column;gap:5px;margin-bottom:13px}
+.fgrow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fg label{font-size:.77rem;font-weight:500;color:var(--navy);letter-spacing:.03em}
+.fg input,.fg select,.fg textarea{padding:11px 12px;border:1.5px solid var(--border);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:.87rem;color:#2d2d2d;background:var(--white);outline:none;transition:border-color .2s;width:100%}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--teal);background:var(--white)}
+.fg textarea{resize:vertical;min-height:78px}
+.btn-full{width:100%;padding:14px;font-size:.94rem;border-radius:6px;border:none}
+.fnote{text-align:center;font-size:.72rem;color:var(--muted);margin-top:9px}
+.succ{display:none;background:#edf6f5;border:1px solid var(--teal);color:var(--teal);padding:12px 15px;border-radius:7px;font-size:.86rem;text-align:center;margin-top:9px}
+
+/* ── MAP ── */
+#location{padding:0}
+.map-wrap{height:320px;overflow:hidden}
+.map-wrap iframe{width:100%;height:100%;border:0}
+.loc-bar{background:var(--navy);padding:20px 16px;text-align:center}
+.loc-bar p{font-size:.83rem;color:rgba(255,255,255,.6)}
+.loc-bar strong{color:white}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);color:white;padding:52px 16px 0}
+.fi-wrap{max-width:1200px;margin:0 auto}
+.fb-brand{margin-bottom:28px}
+.fl{display:flex;align-items:center;gap:8px;margin-bottom:13px}
+.fl .logo-icon{background:var(--teal);width:32px;height:32px}
+.fl .logo-icon svg{width:16px;height:16px}
+.fl span{font-family:var(--fd);font-size:1.15rem;font-weight:600;color:white}
+.fb-brand>p{font-size:.83rem;line-height:1.8;color:rgba(255,255,255,.5);margin-bottom:16px;max-width:320px}
+.fsocs{display:flex;gap:8px}
+.fsb{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.08);border:none;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:.73rem;text-decoration:none;transition:background .2s,color .2s}
+.fsb:hover{background:var(--teal);color:white}
+.f-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:24px 0 32px;border-top:1px solid rgba(255,255,255,.1)}
+.fc h4{font-size:.69rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.37);margin-bottom:13px;font-weight:500}
+.fc ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.fc ul li a{font-size:.83rem;color:rgba(255,255,255,.58);transition:color .2s}
+.fc ul li a:hover{color:white}
+.hr-row{display:flex;justify-content:space-between;font-size:.8rem;color:rgba(255,255,255,.48);gap:8px;margin-bottom:7px}
+.hr-row .day{color:rgba(255,255,255,.72)}
+.emg{margin-top:13px;padding-top:13px;border-top:1px solid rgba(255,255,255,.1)}
+.emg small{font-size:.73rem;color:rgba(255,255,255,.38);display:block;margin-bottom:3px}
+.emg strong{font-size:.93rem;color:white}
+.fbot{padding:16px 0;border-top:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;gap:9px;align-items:center;text-align:center}
+.fbot p{font-size:.73rem;color:rgba(255,255,255,.3)}
+.fbl{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.fbl a{font-size:.73rem;color:rgba(255,255,255,.3);transition:color .2s}
+.fbl a:hover{color:rgba(255,255,255,.7)}
+
+/* ── LIGHTBOX ── */
+.lightbox{display:none;position:fixed;inset:0;background:rgba(26,40,64,.92);z-index:2000;align-items:center;justify-content:center;padding:18px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:100%;max-height:85vh;border-radius:7px;object-fit:contain}
+.lb-x{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.15);border:none;color:white;width:36px;height:36px;border-radius:50%;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lb-x:hover{background:rgba(255,255,255,.3)}
+
+/* ── SCROLL TOP ── */
+.stb{position:fixed;bottom:22px;right:18px;width:40px;height:40px;background:var(--teal);color:white;border:none;border-radius:50%;font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 5px 16px rgba(42,124,118,.38);opacity:0;transform:translateY(10px);transition:opacity .3s,transform .3s;z-index:500}
+.stb.show{opacity:1;transform:none}
+.stb:hover{background:var(--navy)}
+
+/* ═ TABLET 580px ═ */
+@media(min-width:580px){
+  section{padding:72px 24px}
+  #works{padding:72px 24px}
+  footer{padding:60px 24px 0}
+  .ttl{font-size:2.2rem}
+  .hero-img{height:320px;max-height:380px}
+  .hero-content{padding:36px 24px 52px}
+  .hero-content h1{font-size:2.7rem}
+  .ab-imgs{grid-template-rows:185px 185px}
+  .ab-img{height:185px}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .gal-grid{grid-template-columns:repeat(3,1fr)}
+  .gi{height:170px}
+  .doc-grid{gap:18px}
+  .dc-img{height:200px}
+  .f-cols{grid-template-columns:repeat(3,1fr);gap:28px}
+}
+
+/* ═ DESKTOP 900px ═ */
+@media(min-width:900px){
+  :root{--nav-h:70px}
+  section{padding:96px 32px}
+  #works{padding:96px 32px}
+  footer{padding:70px 32px 0}
+  .nav-inner{padding:0 28px}
+  .nav-links{display:flex}
+  .hamburger,.mob-drawer,.drawer-overlay{display:none!important}
+  .hero{flex-direction:row;min-height:100vh}
+  .hero-img{width:50%;height:auto;max-height:none;flex-shrink:0;order:2}
+  .hero-img img{height:100%}
+  .hero-content{width:50%;order:1;padding:80px 56px 80px 60px}
+  .hero-content h1{font-size:clamp(2.8rem,3.8vw,3.8rem)}
+  .hero-content p{font-size:1rem;max-width:420px}
+  .h-stats{grid-template-columns:repeat(4,1fr);gap:22px}
+  .ab-grid{display:grid;grid-template-columns:1fr 1fr;gap:68px;align-items:center}
+  .ab-imgs{grid-template-rows:195px 195px}
+  .ab-img{height:195px}
+  .svc-grid{grid-template-columns:repeat(3,1fr)}
+  .sh{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px}
+  .gal-grid{grid-template-columns:repeat(4,1fr);grid-template-rows:195px 195px;gap:13px}
+  .gi{height:auto}
+  .gi:nth-child(1),.gi:nth-child(4){grid-column:span 2}
+  .doc-grid{grid-template-columns:repeat(4,1fr);margin-top:40px}
+  .dc-img{height:230px}
+  .dc-info h3{font-size:1.1rem}
+  .apt-wrap{display:grid;grid-template-columns:1fr 1fr;gap:68px;align-items:start}
+  .footer-desktop{display:grid;grid-template-columns:1.9fr 1fr 1fr 1.3fr;gap:52px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .fb-brand{margin-bottom:0}
+  .f-cols{display:contents;border-top:none;padding:0}
+  .fbot{flex-direction:row;justify-content:space-between;text-align:left}
+  .map-wrap{height:420px}
+}
+@media(min-width:1100px){.nav-inner{padding:0 36px}.nav-links{gap:34px}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="logo">
+      <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.5 2 6 4.5 6 7c0 1.5.5 2.8 1.3 3.8L6 22h4l1-6h2l1 6h4l-1.3-11.2C18.5 9.8 19 8.5 19 7c0-2.5-2.5-5-7-5z"/></svg></div>
+      <div class="logo-text"><span class="ln1">Dr.  Veena Mattu</span><span class="ln2">General Physician</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#works">Gallery</a></li>
+      <li><a href="#doctors">Doctors</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#appointment" class="nav-cta">Book Appointment</a></li>
+    </ul>
+    <button class="hamburger" id="ham" aria-label="Open navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<nav class="mob-drawer" id="mobDrawer" aria-hidden="true">
+  <div class="mob-drawer-inner">
+    <a href="#about"        class="mob-link" onclick="cD()"><span class="me">🏥</span>About Us</a>
+    <a href="#services"     class="mob-link" onclick="cD()"><span class="me">🦷</span>Services</a>
+    <a href="#works"        class="mob-link" onclick="cD()"><span class="me">🖼️</span>Gallery</a>
+    <a href="#doctors"      class="mob-link" onclick="cD()"><span class="me">👨‍⚕️</span>Our Doctors</a>
+    <a href="#testimonials" class="mob-link" onclick="cD()"><span class="me">⭐</span>Patient Reviews</a>
+    <a href="#faq"          class="mob-link" onclick="cD()"><span class="me">❓</span>FAQ</a>
+    <a href="#appointment"  class="mob-book" onclick="cD()">📅&nbsp; Book Appointment</a>
+  </div>
+</nav>
+<div class="drawer-overlay" id="dOv" onclick="cD()"></div>
+
+<!-- HERO -->
+<section id="home" style="padding:0">
+  <div class="hero">
+    <div class="hero-img">
+      <img src="/assets/hero1.jpeg" alt="Dentist with patient" loading="eager"/>
+    </div>
+    <div class="hero-content">
+      <div class="badge">Dibrugarh's Premier Dental Boutique · Trusted Since 2008</div>
+      <h1>Elevating the art of the <em>Modern Smile.</em></h1>
+      <p>Where advanced clinical precision meets a relaxed, boutique experience — because you deserve nothing less than a confident, healthy smile.</p>
+      <div class="h-actions">
+        <a href="#appointment" class="btn btn-t">Book Appointment</a>
+        <a href="#services" class="btn btn-o">Our Services</a>
+      </div>
+      <div class="h-stats">
+        <div><div class="st-num">10k+</div><div class="st-lbl">Happy Patients</div></div>
+        <div><div class="st-num">15+</div><div class="st-lbl">Years Experience</div></div>
+        <div><div class="st-num">12</div><div class="st-lbl">Expert Doctors</div></div>
+        <div><div class="st-num">4.9★</div><div class="st-lbl">Average Rating</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST TICKER -->
+<div class="ticker">
+  <div class="ticker-content">
+    <span>Trusted by 10k+ Patients</span><span class="dot">◆</span>
+    <span>Award-Winning Care</span><span class="dot">◆</span>
+    <span>Certified Invisalign® Provider</span><span class="dot">◆</span>
+    <span>Modern Painless Tech</span><span class="dot">◆</span>
+    <span>Open Weekends</span><span class="dot">◆</span>
+    <span>0% EMI Available</span><span class="dot">◆</span>
+    <span>Trusted by 10k+ Patients</span><span class="dot">◆</span>
+    <span>Award-Winning Care</span><span class="dot">◆</span>
+    <span>Certified Invisalign® Provider</span><span class="dot">◆</span>
+    <span>Modern Painless Tech</span><span class="dot">◆</span>
+    <span>Open Weekends</span><span class="dot">◆</span>
+    <span>0% EMI Available</span><span class="dot">◆</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="si">
+    <div class="ab-grid">
+      <div class="ab-imgs fi">
+        <div class="ab-img tall"><img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&auto=format&fit=crop&q=80" alt="Clinic interior" loading="lazy"/></div>
+        <div class="ab-img"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&auto=format&fit=crop&q=80" alt="Dental equipment" loading="lazy"/></div>
+        <div class="ab-img"><img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=400&auto=format&fit=crop&q=80" alt="Teeth care" loading="lazy"/></div>
+      </div>
+      <div class="fi">
+        <p class="lbl">About BrightSmile</p>
+        <h2 class="ttl">A clinic built on <em>trust</em> &amp; expertise</h2>
+        <p class="sub">Founded in 2008 in Mumbai, BrightSmile has grown from a two-chair practice into a full-service dental centre with 12 specialists. We believe every patient deserves personalised, compassionate care.</p>
+        <div class="ab-feats">
+          <div class="af"><div class="af-dot"></div><p><strong>State-of-the-art facility</strong> — Digital X-rays, intraoral cameras, CAD/CAM systems, and laser dentistry for precision treatment.</p></div>
+          <div class="af"><div class="af-dot"></div><p><strong>Patient-first philosophy</strong> — We listen, explain clearly, and ensure you're comfortable at every stage.</p></div>
+          <div class="af"><div class="af-dot"></div><p><strong>Certified professionals</strong> — All doctors hold MDS degrees and attend regular continuing education.</p></div>
+        </div>
+        <a href="#appointment" class="btn btn-t" style="margin-top:26px">Meet Our Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="si">
+    <div class="sh fi">
+      <div><p class="lbl">What We Offer</p><h2 class="ttl">Comprehensive <em>dental</em> care</h2></div>
+      <a href="#appointment" class="btn btn-o" style="margin-top:14px;white-space:nowrap">All Services</a>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card fi">
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=600&auto=format&fit=crop&q=80" alt="General Dentistry" loading="lazy"/></div>
+        <div class="svc-body"><div class="svc-ico">🪥</div><h3> RCT (Root Canal)</h3><p>Routine check-ups, cleanings, fillings, and preventive care to keep your oral health in top condition year-round.</p><div class="svc-price">From ₹1,500</div><a href="#appointment" class="svc-lnk">Book Now</a></div>
+      </div>
+      <div class="svc-card fi">
+        <div class="svc-img"><img src="https://i.pinimg.com/736x/ad/03/42/ad034228194aad7cbb31b09319406583.jpg" alt="Teeth Whitening" loading="lazy"/></div>
+        <div class="svc-body"><div class="svc-ico">✨</div><h3>Teeth Whitening</h3><p>Professional solutions that brighten your smile by up to 8 shades safely and comfortably.</p><div class="svc-price">From ₹6,000</div><a href="#appointment" class="svc-lnk">Book Now</a></div>
+      </div>
+      <div class="svc-card fi">
+        <div class="svc-img"><img src="https://i.pinimg.com/736x/3a/51/da/3a51dad4aafa571bad0f4f2738ade12e.jpg" alt="Orthodontics" loading="lazy"/></div>
+        <div class="svc-body"><div class="svc-ico">🦷</div><h3>Tooth Extraction</h3><p>Braces, Invisalign-certified clear aligners, and retainers for children, teens, and adults of all ages.</p><div class="svc-price">From ₹85,000</div><a href="#appointment" class="svc-lnk">Book Now</a></div>
+      </div>
+      <div class="svc-card fi">
+        <div class="svc-img"><img src="https://i.pinimg.com/736x/5d/26/a4/5d26a488d7160b33cab5b39f3a37552e.jpg" alt="Implants" loading="lazy"/></div>
+        <div class="svc-body"><div class="svc-ico">🔩</div><h3>Dental Implants</h3><p>Permanent, natural-looking tooth replacement with titanium implants that look, feel, and function like real teeth.</p><div class="svc-price">From ₹35,000</div><a href="#appointment" class="svc-lnk">Book Now</a></div>
+      </div>
+      <div class="svc-card fi">
+        <div class="svc-img"><img src="https://i.pinimg.com/736x/2c/11/9a/2c119a23e2218ce890e46b0a6e11d4a0.jpg" alt="Cosmetic" loading="lazy"/></div>
+        <div class="svc-body"><div class="svc-ico">💎</div><h3>Braces &amp; Aligners</h3><p>Braces, Invisalign-certified clear aligners, and retainers for children, teens, and adults of all ages.</p><div class="svc-price">From ₹18,000 / tooth</div><a href="#appointment" class="svc-lnk">Book Now</a></div>
+      </div>
+      <div class="svc-card fi">
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1666214280391-8ff5bd3c0bf0?w=600&auto=format&fit=crop&q=80" alt="Paediatric" loading="lazy"/></div>
+        <div class="svc-body"><div class="svc-ico">👶</div><h3>Tooth Infection Treatment</h3><p>Gentle, child-friendly care that builds a positive relationship with oral health from the very first visit.</p><div class="svc-price">From ₹800</div><a href="#appointment" class="svc-lnk">Book Now</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="works">
+  <div class="si">
+    <div class="wh fi">
+      <p class="lbl">Our Work</p>
+      <h2 class="ttl">Before &amp; <em style="color:var(--gold)">After</em> results</h2>
+      <p class="sub">Real patients, real results. See how we've transformed smiles across Mumbai.</p>
+      <div class="whr"><a href="#appointment" class="btn btn-ow">Book a Consultation</a></div>
+    </div>
+    <div class="gtabs fi">
+      <button class="tb active">All Cases</button>
+      <button class="tb">Whitening</button>
+      <button class="tb">Implants</button>
+      <button class="tb">Braces</button>
+      <button class="tb">Veneers</button>
+    </div>
+    <div class="gal-grid">
+      <div class="gi" onclick="oLB('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=1200&auto=format&fit=crop&q=80')"><img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=700&auto=format&fit=crop&q=80" alt="" loading="lazy"/><div class="gcap">Smile Makeover — Complete restoration</div></div>
+      <div class="gi" onclick="oLB('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=1200&auto=format&fit=crop&q=80')"><img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=500&auto=format&fit=crop&q=80" alt="" loading="lazy"/><div class="gcap">Professional Whitening — 8 shades brighter</div></div>
+      <div class="gi" onclick="oLB('https://images.unsplash.com/photo-1625493894888-5f07f4ad7e7a?w=1200&auto=format&fit=crop&q=80')"><img src="https://i.pinimg.com/1200x/64/f9/3b/64f93bf49c9cabbef02a2980d05649b0.jpg" alt="" loading="lazy"/><div class="gcap">Clear Aligners — 18 month treatment</div></div>
+      <div class="gi" onclick="oLB('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1200&auto=format&fit=crop&q=80')"><img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=700&auto=format&fit=crop&q=80" alt="" loading="lazy"/><div class="gcap">Clinic Tour — Modern facilities</div></div>
+      <div class="gi" onclick="oLB('https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=1200&auto=format&fit=crop&q=80')"><img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=500&auto=format&fit=crop&q=80" alt="" loading="lazy"/><div class="gcap">Porcelain Veneers — 6 upper teeth</div></div>
+      <div class="gi" onclick="oLB('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&auto=format&fit=crop&q=80')"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=500&auto=format&fit=crop&q=80" alt="" loading="lazy"/><div class="gcap">Latest Equipment — Digital precision</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCTORS -->
+<section id="doctors">
+  <div class="si">
+    <div class="fi"><p class="lbl">Our Team</p><h2 class="ttl">Meet the <em>specialists</em></h2><p class="sub">Our dedicated team covers every aspect of your dental health.</p></div>
+    <div class="doc-grid">
+      <div class="dc fi"><div class="dc-img"><img src="https://images.jdmagicbox.com/comp/gurgaon/g7/011pxx11.xx11.131104131820.m5g7/catalogue/dr-veena-mattu-sushant-lok-phase-1-gurgaon-general-physician-doctors-vtslhrq8q3.jpg" alt="Dr.Veena Mattu" loading="lazy" /></div><div class="dc-info"><h3>Dr.Veena Mattu</h3><div class="dc-role">48 Years in Healthcare</div><div class="dc-exp">General Physician in Gurgaon</div><div class="dc-soc"><a href="#" class="dsb">in</a><a href="#" class="dsb">@</a></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS CAROUSEL -->
+<section id="testimonials">
+  <div class="si">
+    <div class="fi"><p class="lbl">Patient Stories</p><h2 class="ttl">What our patients <em>say</em></h2><p class="sub">Thousands of happy smiles — here's what a few of them had to share.</p></div>
+  </div>
+  <div class="review-carousel">
+    <div class="review-track">
+      <div class="tc"><div class="stars">★★★★★</div><p>I was terrified of dentists for years. Dr. Ananya made me feel completely at ease. My root canal was painless — I almost fell asleep! The clinic is spotless and everyone is so kind.</p><div class="ta"><div class="ta-av"><img src="https://images.unsplash.com/photo-1494790108755-2616b612b890?w=100&auto=format&fit=crop&q=80" alt="" loading="lazy"/></div><div><div class="ta-name">Meera K.</div><div class="ta-tag">Root Canal · Mumbai</div></div></div></div>
+      <div class="tc"><div class="stars">★★★★★</div><p>The glass of water, the soft music, the incredible team — I forgot I was at a dentist's office. My veneers look perfectly natural. Absolutely worth every rupee.</p><div class="ta"><div class="ta-av"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&auto=format&fit=crop&q=80" alt="" loading="lazy"/></div><div><div class="ta-name">Sarah Jenkins</div><div class="ta-tag">Veneers · Bandra</div></div></div></div>
+      <div class="tc"><div class="stars">★★★★★</div><p>Dr. Rohan did my Invisalign over 14 months and the results are stunning. The whole team kept me informed at every step. My confidence has completely transformed.</p><div class="ta"><div class="ta-av"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="" loading="lazy"/></div><div><div class="ta-name">Rohan Mehta</div><div class="ta-tag">Invisalign · Andheri</div></div></div></div>
+      <div class="tc"><div class="stars">★★★★★</div><p>Invisalign here was a breeze. Digital scans made it so easy. Highly recommend BrightSmile to everyone in Mumbai. Best dental experience in 20 years.</p><div class="ta"><div class="ta-av"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&auto=format&fit=crop&q=80" alt="" loading="lazy"/></div><div><div class="ta-name">Priya Kapoor</div><div class="ta-tag">Creative Director · Mumbai</div></div></div></div>
+      <div class="tc"><div class="stars">★★★★★</div><p>My son has been going to Dr. Priya since he was 4. She has a magical way with kids — he actually looks forward to dental visits. Can't recommend her enough.</p><div class="ta"><div class="ta-av"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80" alt="" loading="lazy"/></div><div><div class="ta-name">Vikram S.</div><div class="ta-tag">Parent · Bandra, Mumbai</div></div></div></div>
+      <!-- duplicates for infinite loop -->
+      <div class="tc"><div class="stars">★★★★★</div><p>I was terrified of dentists for years. Dr. Ananya made me feel completely at ease. My root canal was painless — I almost fell asleep! The clinic is spotless and everyone is so kind.</p><div class="ta"><div class="ta-av"><img src="https://images.unsplash.com/photo-1494790108755-2616b612b890?w=100&auto=format&fit=crop&q=80" alt="" loading="lazy"/></div><div><div class="ta-name">Meera K.</div><div class="ta-tag">Root Canal · Mumbai</div></div></div></div>
+      <div class="tc"><div class="stars">★★★★★</div><p>The glass of water, the soft music, the incredible team — I forgot I was at a dentist's office. My veneers look perfectly natural. Absolutely worth every rupee.</p><div class="ta"><div class="ta-av"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&auto=format&fit=crop&q=80" alt="" loading="lazy"/></div><div><div class="ta-name">Sarah Jenkins</div><div class="ta-tag">Veneers · Bandra</div></div></div></div>
+      <div class="tc"><div class="stars">★★★★★</div><p>Dr. Rohan did my Invisalign over 14 months and the results are stunning. The whole team kept me informed at every step. My confidence has completely transformed.</p><div class="ta"><div class="ta-av"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="" loading="lazy"/></div><div><div class="ta-name">Rohan Mehta</div><div class="ta-tag">Invisalign · Andheri</div></div></div></div>
+      <div class="tc"><div class="stars">★★★★★</div><p>Invisalign here was a breeze. Digital scans made it so easy. Highly recommend BrightSmile to everyone in Mumbai. Best dental experience in 20 years.</p><div class="ta"><div class="ta-av"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&auto=format&fit=crop&q=80" alt="" loading="lazy"/></div><div><div class="ta-name">Priya Kapoor</div><div class="ta-tag">Creative Director · Mumbai</div></div></div></div>
+      <div class="tc"><div class="stars">★★★★★</div><p>My son has been going to Dr. Priya since he was 4. She has a magical way with kids — he actually looks forward to dental visits. Can't recommend her enough.</p><div class="ta"><div class="ta-av"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80" alt="" loading="lazy"/></div><div><div class="ta-name">Vikram S.</div><div class="ta-tag">Parent · Bandra, Mumbai</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="si">
+    <div class="fi" style="text-align:center"><p class="lbl">Have Questions?</p><h2 class="ttl">Frequently Asked</h2></div>
+    <div class="faq-list">
+      <div class="faq-item fi"><div class="faq-q">Do you accept walk-in patients?<span class="icon">+</span></div><div class="faq-a">Yes, we welcome walk-ins, though we recommend booking in advance to avoid waiting. Use our form below to secure a confirmed slot.</div></div>
+      <div class="faq-item fi"><div class="faq-q">Is Invisalign painful?<span class="icon">+</span></div><div class="faq-a">Most patients experience mild pressure during the first few days of each new tray — this is normal and indicates your teeth are moving. No sharp pain is expected.</div></div>
+      <div class="faq-item fi"><div class="faq-q">How long does teeth whitening last?<span class="icon">+</span></div><div class="faq-a">Professional whitening typically lasts 1–3 years depending on your diet and oral hygiene habits. We offer affordable touch-up sessions for existing patients.</div></div>
+      <div class="faq-item fi"><div class="faq-q">Do you offer EMI options?<span class="icon">+</span></div><div class="faq-a">Yes! We offer 0% interest EMI on all treatments above ₹10,000 via major credit cards and Bajaj Finserv. Ask our front desk for details.</div></div>
+      <div class="faq-item fi"><div class="faq-q">What are your clinic hours?<span class="icon">+</span></div><div class="faq-a">We're open Mon–Sat 9am–8pm and Sunday 10am–2pm. Emergency dental care is available on call 24/7 at +91 98200 34567.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- APPOINTMENT -->
+<section id="appointment">
+  <div class="si">
+    <div class="apt-wrap">
+      <div class="ai fi">
+        <p class="lbl">Book an Appointment</p>
+        <h2 class="ttl">Let's get you that <em>perfect</em> smile</h2>
+        <p class="sub">Fill out the form and we'll confirm your slot within 2 hours during clinic hours.</p>
+        <div class="c-list">
+          <div class="ci"><div class="ci-ico">📍</div><div><strong>Address</strong><span>204, Sunshine Tower, Linking Road,<br>Bandra West, Mumbai — 400050</span></div></div>
+          <div class="ci"><div class="ci-ico">📞</div><div><strong>Phone</strong><span>+91 98200 34567 &nbsp;·&nbsp; +91 22 2645 8900</span></div></div>
+          <div class="ci"><div class="ci-ico">✉️</div><div><strong>Email</strong><span>hello@brightsmile.clinic</span></div></div>
+          <div class="ci"><div class="ci-ico">🕐</div><div><strong>Hours</strong><span>Mon–Sat: 9AM–8PM &nbsp;·&nbsp; Sun: 10AM–2PM</span></div></div>
+        </div>
+      </div>
+      <div class="af-form fi">
+        <h3>Book Your Visit</h3>
+        <p>We'll confirm your slot within 2 hours</p>
+        <div class="fgrow">
+          <div class="fg"><label>First Name *</label><input type="text" id="fname" placeholder="Rahul"/></div>
+          <div class="fg"><label>Last Name</label><input type="text" id="lname" placeholder="Desai"/></div>
+        </div>
+        <div class="fg"><label>Phone Number *</label><input type="tel" id="phone" placeholder="+91 98000 00000"/></div>
+        <div class="fg"><label>Email Address</label><input type="email" id="email" placeholder="you@email.com"/></div>
+        <div class="fgrow">
+          <div class="fg"><label>Preferred Date *</label><input type="date" id="date"/></div>
+          <div class="fg"><label>Preferred Time</label><select id="time"><option value="">Select a slot</option><option>9:00 AM – 10:00 AM</option><option>10:00 AM – 11:00 AM</option><option>11:00 AM – 12:00 PM</option><option>2:00 PM – 3:00 PM</option><option>4:00 PM – 5:00 PM</option><option>6:00 PM – 7:00 PM</option><option>7:00 PM – 8:00 PM</option></select></div>
+        </div>
+        <div class="fg"><label>Service Required *</label><select id="service"><option value="">Select a service</option><option>General Check-up &amp; Cleaning</option><option>Teeth Whitening</option><option>Orthodontics / Braces / Aligners</option><option>Dental Implants</option><option>Design &amp; Veneers</option><option>Paediatric Dentistry</option><option>Root Canal Treatment</option><option>Other / Not Sure</option></select></div>
+        <div class="fg"><label>Notes (optional)</label><textarea id="notes" placeholder="Describe any symptoms or concerns…"></textarea></div>
+        <button class="btn btn-t btn-full" id="submitBtn" onclick="submitForm()">Confirm Appointment</button>
+        <div class="succ" id="succ">✅ Request received! We'll call you within 2 hours to confirm.</div>
+        <p class="fnote">🔒 Your information is safe and never shared.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<div id="location">
+  <div class="map-wrap">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.0!2d72.8346!3d19.0596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDAzJzM0LjYiTiA3MsKwNTAnMDQuNiJF!5e0!3m2!1sen!2sin!4v1680000000" allowfullscreen loading="lazy"></iframe>
+  </div>
+  <div class="loc-bar"><p><strong>BrightSmile Dental Clinic</strong> &nbsp;—&nbsp; 204, Sunshine Tower, Linking Road, Bandra West, Mumbai 400050</p></div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fi-wrap">
+    <div class="footer-desktop">
+      <div class="fb-brand">
+        <div class="fl">
+          <div class="logo-icon"><svg viewBox="0 0 24 24" fill="white"><path d="M12 2C8.5 2 6 4.5 6 7c0 1.5.5 2.8 1.3 3.8L6 22h4l1-6h2l1 6h4l-1.3-11.2C18.5 9.8 19 8.5 19 7c0-2.5-2.5-5-7-5z"/></svg></div>
+          <span>BrightSmile Dental</span>
+        </div>
+        <p>Providing compassionate, world-class dental care to the families of Mumbai since 2008. Your smile is our life's work.</p>
+        <div class="fsocs">
+          <a href="#" class="fsb" aria-label="Facebook">f</a>
+          <a href="#" class="fsb" aria-label="Instagram">ig</a>
+          <a href="#" class="fsb" aria-label="Twitter">𝕏</a>
+          <a href="#" class="fsb" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+      <div class="f-cols">
+        <div class="fc"><h4>Quick Links</h4><ul><li><a href="#home">Home</a></li><li><a href="#about">About Us</a></li><li><a href="#services">Services</a></li><li><a href="#works">Gallery</a></li><li><a href="#doctors">Our Doctors</a></li><li><a href="#testimonials">Reviews</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+        <div class="fc"><h4>Services</h4><ul><li><a href="#appointment">General Dentistry</a></li><li><a href="#appointment">Teeth Whitening</a></li><li><a href="#appointment">Orthodontics</a></li><li><a href="#appointment">Dental Implants</a></li><li><a href="#appointment">Veneers</a></li><li><a href="#appointment">Paediatric Care</a></li><li><a href="#appointment">Root Canal</a></li></ul></div>
+        <div class="fc"><h4>Clinic Hours</h4><div class="hr-row"><span class="day">Mon – Fri</span><span>9AM – 8PM</span></div><div class="hr-row"><span class="day">Saturday</span><span>9AM – 6PM</span></div><div class="hr-row"><span class="day">Sunday</span><span>10AM – 2PM</span></div><div class="emg"><small>Emergency Contact</small><strong>+91 98200 34567</strong></div></div>
+      </div>
+    </div>
+    <div class="fbot">
+      <p>© 2025 BrightSmile Dental Clinic. All rights reserved. | 204 Sunshine Tower, Bandra West, Mumbai.</p>
+      <div class="fbl"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Sitemap</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lb" onclick="cLB(event)">
+  <button class="lb-x" onclick="cLB()">✕</button>
+  <img id="lbImg" src="" alt="Gallery image"/>
+</div>
+
+<!-- SCROLL TOP -->
+<button class="stb" id="stb" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<script>
+/* Navbar */
+const NV=document.getElementById('navbar');
+window.addEventListener('scroll',()=>{
+  NV.classList.toggle('scrolled',scrollY>18);
+  document.getElementById('stb').classList.toggle('show',scrollY>380);
+},{passive:true});
+
+/* Drawer */
+const HAM=document.getElementById('ham'),DR=document.getElementById('mobDrawer'),OV=document.getElementById('dOv');
+HAM.addEventListener('click',()=>{
+  const o=DR.classList.toggle('open');
+  OV.classList.toggle('show',o);HAM.classList.toggle('open',o);
+  HAM.setAttribute('aria-expanded',o);DR.setAttribute('aria-hidden',!o);
+  document.body.style.overflow=o?'hidden':'';
+});
+function cD(){
+  DR.classList.remove('open');OV.classList.remove('show');
+  HAM.classList.remove('open');HAM.setAttribute('aria-expanded','false');
+  DR.setAttribute('aria-hidden','true');document.body.style.overflow='';
+}
+window.addEventListener('resize',()=>{if(innerWidth>=900)cD();});
+
+/* Smooth scroll */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();const nh=parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h'))||62;window.scrollTo({top:t.getBoundingClientRect().top+scrollY-nh,behavior:'smooth'});}
+  });
+});
+
+/* Fade-in on scroll */
+const OBS=new IntersectionObserver((es)=>{
+  es.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('vis'),i*70);OBS.unobserve(e.target);}});
+},{threshold:.07});
+document.querySelectorAll('.fi').forEach(el=>OBS.observe(el));
+
+/* Gallery tabs */
+document.querySelectorAll('.tb').forEach(b=>{
+  b.addEventListener('click',()=>{document.querySelectorAll('.tb').forEach(x=>x.classList.remove('active'));b.classList.add('active');});
+});
+
+/* Lightbox */
+function oLB(s){document.getElementById('lbImg').src=s;document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden';}
+function cLB(e){if(!e||e.target!==document.getElementById('lbImg')){document.getElementById('lb').classList.remove('open');document.body.style.overflow='';}}
+
+/* FAQ */
+document.querySelectorAll('.faq-item').forEach(item=>{
+  item.querySelector('.faq-q').addEventListener('click',()=>{
+    const o=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!o)item.classList.add('open');
+  });
+});
+
+/* Date min = tomorrow */
+const DI=document.getElementById('date');
+if(DI){const t=new Date();t.setDate(t.getDate()+1);DI.min=t.toISOString().split('T')[0];}
+
+/* Form submit */
+function submitForm(){
+  const f=document.getElementById('fname').value.trim(),
+        p=document.getElementById('phone').value.trim(),
+        d=document.getElementById('date').value,
+        s=document.getElementById('service').value;
+  if(!f||!p||!d||!s){alert('Please fill in your name, phone, preferred date, and service.');return;}
+  const b=document.getElementById('submitBtn');
+  b.textContent='Sending…';b.disabled=true;
+  setTimeout(()=>{
+    document.getElementById('succ').style.display='block';
+    b.textContent='✓ Appointment Requested';
+    ['fname','lname','phone','email','date','notes'].forEach(id=>{document.getElementById(id).value='';});
+    document.getElementById('time').selectedIndex=0;
+    document.getElementById('service').selectedIndex=0;
+    setTimeout(()=>{document.getElementById('succ').style.display='none';b.textContent='Confirm Appointment';b.disabled=false;},7000);
+  },1200);
+}
+</script>
+</body>
+</html>

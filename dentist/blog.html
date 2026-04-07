@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Clinical Radiance | Premium Dental Experience</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;700;800&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/src/style.css" />
+<style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48; }
+    .glass-module, .glass-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .animate-marquee { display: flex; width: max-content; animation: marquee 30s linear infinite; }
+</style>
+<script>
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "on-background": "#2c2f31", "secondary": "#00675e", "surface-dim": "#d0d5d8", "on-tertiary": "#edf3ff", "outline": "#747779", "inverse-primary": "#b38bfe", "on-tertiary-fixed": "#354253", "background": "#f5f7f9", "inverse-on-surface": "#9a9d9f", "on-error": "#ffefef", "primary-fixed": "#b38bfe", "on-primary-fixed": "#000000", "tertiary-fixed-dim": "#cad8ed", "surface-container-highest": "#d9dde0", "surface-variant": "#d9dde0", "on-surface-variant": "#595c5e", "tertiary-container": "#d8e6fc", "on-surface": "#2c2f31", "error-dim": "#a70138", "primary-container": "#b38bfe", "on-tertiary-container": "#475466", "on-error-container": "#510017", "primary-fixed-dim": "#a67eef", "on-secondary": "#c0fff4", "error": "#b41340", "surface-tint": "#6c44b2", "surface-container-lowest": "#ffffff", "surface-bright": "#f5f7f9", "on-secondary-fixed-variant": "#00675e", "on-primary-fixed-variant": "#3a0380", "on-secondary-fixed": "#004841", "tertiary-dim": "#435162", "secondary-fixed-dim": "#59ead8", "primary-dim": "#5f37a5", "on-primary-container": "#2f006a", "primary": "#6c44b2", "outline-variant": "#abadaf", "surface": "#f5f7f9", "surface-container-high": "#dfe3e6", "secondary-fixed": "#69f9e6", "surface-container": "#e5e9eb", "secondary-container": "#69f9e6", "tertiary": "#4f5d6e", "surface-container-low": "#eef1f3", "inverse-surface": "#0b0f10", "tertiary-fixed": "#d8e6fc", "error-container": "#f74b6d", "secondary-dim": "#005a52", "on-primary": "#f8efff", "on-tertiary-fixed-variant": "#515e70", "on-secondary-container": "#005c54"
+                },
+                borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                fontFamily: { "headline": ["Manrope"], "body": ["Manrope"], "label": ["Inter"] }
+            }
+        }
+    }
+</script>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<div id="navbar-container"></div>
+
+<main class="max-w-screen-2xl mx-auto px-6 md:px-12 py-12">
+<!-- Header Section -->
+<header class="mb-16 text-center md:text-left">
+<p class="text-primary font-label text-sm font-bold tracking-[0.2em] uppercase mb-4">Insights &amp; Innovation</p>
+<h1 class="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter text-on-surface leading-tight">
+                The Dental Radiance Journal
+            </h1>
+</header>
+<!-- Featured Article Section (Asymmetric Layout) -->
+<section class="mb-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center scroll-reveal">
+<div class="lg:col-span-7 relative group">
+<div class="overflow-hidden rounded-xl shadow-2xl">
+<img class="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up of a high-tech dental laser in a bright modern clinic with soft purple ambient lighting and scientific precision feel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8Fjv5bAdcVQeWEkm-zmWMbhl1xJnzs_yZvbr4uJkH7Iza_E3kmHUHHfljX_9SRv4qVhhBTAebKEX8bvZaaTu9qxBxxzh_dxOssFQO4ra8NfGDd3e9sUTyxXkayybejEiAfcRdSLUN5D17FsgoNcT91z0cz6v468yrSI6aXElr5aJjEFubD5U8oyE_f-UtW_kfnepuc-rs8wBJKbmCR-a6umuIXJANdwiNRB_m12lhC5AZqsFAZJTqCVkFl4Hj63-nrG6U_rmim-k"/>
+</div>
+<div class="absolute -bottom-6 -right-6 hidden md:block glass-card p-8 rounded-xl max-w-sm shadow-xl">
+<span class="inline-block bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold font-label mb-4">Clinical News</span>
+<p class="text-on-surface-variant text-sm font-medium leading-relaxed italic">
+                        "The integration of AI in diagnostic imaging marks a new era for patient precision."
+                    </p>
+</div>
+</div>
+<div class="lg:col-span-5 lg:pl-8">
+<p class="text-primary font-label text-xs font-bold tracking-widest mb-4">FEATURED ARTICLE</p>
+<h2 class="text-4xl font-headline font-bold text-on-surface mb-6 leading-tight">The Science of the Perfect Smile: Beyond Aesthetics</h2>
+<p class="text-on-surface-variant text-lg mb-8 leading-relaxed">
+                    Discover how microscopic precision and bio-compatible materials are revolutionizing the way we restore dental structural integrity while achieving ethereal beauty.
+                </p>
+<a class="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all duration-300" href="#">
+                    Read the full study
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- Search and Filters -->
+<section class="mb-16 flex flex-col md:flex-row justify-between items-center gap-8 border-y border-outline-variant/10 py-8 scroll-reveal">
+<div class="flex flex-wrap gap-3">
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full text-sm font-bold shadow-md">All Posts</button>
+<button class="bg-surface-container-low text-on-surface-variant px-6 py-2 rounded-full text-sm font-bold hover:bg-surface-container-high transition-colors">Oral Health</button>
+<button class="bg-surface-container-low text-on-surface-variant px-6 py-2 rounded-full text-sm font-bold hover:bg-surface-container-high transition-colors">Aesthetic Tips</button>
+<button class="bg-surface-container-low text-on-surface-variant px-6 py-2 rounded-full text-sm font-bold hover:bg-surface-container-high transition-colors">Clinical News</button>
+</div>
+<div class="relative w-full md:w-80">
+<input class="w-full bg-surface-container-low border-none rounded-full py-3 px-6 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-on-surface-variant/50" placeholder="Search the journal..." type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant/60">search</span>
+</div>
+</section>
+<!-- Recent Posts (Bento Grid Style) -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 scroll-reveal">
+<!-- Post 1 -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden group shadow-sm hover:shadow-xl transition-shadow duration-300">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Sunlit minimalist bathroom with bamboo toothbrushes and premium oral care products, high-key photography, clean aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbwGOuLz7x0klO4V79jvENzVEqkg0T263oYtueHuGMk3nOcYM8vFLRwIsilv5u-FdQxGAdb0WkS3j8238WzAsbJWXQi3zQf2j779DULRtXeIUY84MJ3U53BIo9iWv2nhxpaQGTAEnmaV8A7e14g2mO-uolBN0A5rdXeK6LSOJu-fhJsDX9n7dUxFK3BDMX5Nr8YB8mELLuIl8uLkP7MlWWY8nKYA79H9NoGJVDUvUCzb_Qf4p_xWMjm3vmToXm-ayPfdPA0rpjbyU"/>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-center mb-4">
+<span class="text-secondary font-label text-[10px] font-black uppercase tracking-widest">Oral Health</span>
+<span class="text-on-surface-variant/60 text-[10px] font-label">Oct 12, 2024</span>
+</div>
+<h3 class="text-xl font-headline font-bold mb-4 group-hover:text-primary transition-colors">Digital Detox for Your Gums: The Modern Routine</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Innovative daily practices that integrate seamlessly into a high-performance lifestyle.</p>
+<a class="text-xs font-bold text-primary flex items-center gap-1" href="#">Continue <span class="material-symbols-outlined text-sm">chevron_right</span></a>
+</div>
+</article>
+<!-- Post 2 -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden group shadow-sm hover:shadow-xl transition-shadow duration-300">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Artistic macro photography of translucent tooth enamel under clinical lighting showing intricate texture and purity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmFNL8PfHKHoFslv7fcGKBzguDLs6Dv07MUAqjBnPMO_BcT2jV054Q2nny4Jq4D5vtMD56BGq756armQohuNSbg-yGw1tg4xo-PhMAM1iMvx_fSZglk6N7LlzVpa0ZSfRLagXn34QGEINIOZEWhECPGiY5JwYCkdM2lBlDG3WUUthwWzn1MviUHNTo8GHB3JYKBhovMuUtHohR4wBph_jtxoCzTjanB-MmkFBkqJ9ON5N-ay0i3YUndSMNFX2AyFoRKFvKmOlSlSY"/>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-center mb-4">
+<span class="text-secondary font-label text-[10px] font-black uppercase tracking-widest">Aesthetic Tips</span>
+<span class="text-on-surface-variant/60 text-[10px] font-label">Oct 08, 2024</span>
+</div>
+<h3 class="text-xl font-headline font-bold mb-4 group-hover:text-primary transition-colors">Porcelain Veneers: The Art of Subtle Enhancement</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">How our bespoke design process creates natural results tailored to your unique facial geometry.</p>
+<a class="text-xs font-bold text-primary flex items-center gap-1" href="#">Continue <span class="material-symbols-outlined text-sm">chevron_right</span></a>
+</div>
+</article>
+<!-- Post 3 -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden group shadow-sm hover:shadow-xl transition-shadow duration-300">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Portrait of a smiling professional woman in a serene clinic environment, soft bokeh background with purple accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV-qMSr2BS22kU5U1KBcU3GfE-k9kbGlgjbeIZYH6Ub3qxkXmQk7MerZHsN0FZfZE5SOxUj8WSXIubIKpJeF3NeJiJSmqxeBf3cgezk5djm8vhc1WFWK4RhEE128gWZkfJ_uYGxw7nHQl6dUsP2xP2gw5UFtE28htvcBDwaBPSoUjbgjib76hFCso5_VK4rWU6sDniv7j0qKP5udiR8Y1lBzaWpY3b22IvYkKIZmo6d7vBNX7_dfuzAQzv57ZMyVdOtdJmKRZIHgQ"/>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-center mb-4">
+<span class="text-secondary font-label text-[10px] font-black uppercase tracking-widest">Clinical News</span>
+<span class="text-on-surface-variant/60 text-[10px] font-label">Sep 24, 2024</span>
+</div>
+<h3 class="text-xl font-headline font-bold mb-4 group-hover:text-primary transition-colors">Micro-Radiance: Our New Whitening Protocol</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Exploring the molecular science behind our latest non-invasive brightening treatment.</p>
+<a class="text-xs font-bold text-primary flex items-center gap-1" href="#">Continue <span class="material-symbols-outlined text-sm">chevron_right</span></a>
+</div>
+</article>
+</section>
+<!-- Newsletter Section (Innovation Card Style) -->
+<section class="mt-32 relative scroll-reveal">
+<div class="bg-primary overflow-hidden rounded-xl p-12 md:p-20 flex flex-col items-center text-center shadow-2xl relative">
+<div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<path d="M0,100 C30,40 70,40 100,100 Z" fill="white"></path>
+</svg>
+</div>
+<div class="relative z-10 max-w-2xl">
+<h2 class="text-4xl md:text-5xl font-headline font-bold text-on-primary mb-6">Stay Radiantly Informed</h2>
+<p class="text-on-primary/80 text-lg mb-10">Join our curated list for monthly breakthroughs in dental science, aesthetic trends, and exclusive clinic updates.</p>
+<form class="w-full flex flex-col md:flex-row gap-4">
+<input class="flex-grow bg-white/10 border-white/20 text-white placeholder:text-white/50 rounded-full px-8 py-4 focus:ring-2 focus:ring-white/40 focus:border-transparent outline-none" placeholder="Your professional email" type="email"/>
+<button class="bg-surface-container-lowest text-primary font-bold px-10 py-4 rounded-full hover:scale-95 transition-all shadow-xl" type="submit">
+                            Subscribe
+                        </button>
+</form>
+<p class="text-on-primary/40 text-[10px] mt-6 font-label uppercase tracking-widest">Scientific privacy assured. Unsubscribe at any time.</p>
+</div>
+</div>
+</section>
+</main>
+
+    <div id="footer-container"></div>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

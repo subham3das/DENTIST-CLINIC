@@ -1,0 +1,42 @@
+<nav class="sticky top-0 w-full z-50 bg-slate-50/70 dark:bg-slate-900/70 backdrop-blur-xl shadow-[0_10px_40px_rgba(108,68,178,0.06)] z-[100] relative">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+    <a href="/" class="text-2xl font-black tracking-tighter text-slate-900 dark:text-white font-headline">
+        Clinical Radiance
+    </a>
+    <div class="hidden md:flex items-center gap-10 font-manrope tracking-tight font-semibold">
+        <a class="text-slate-600 dark:text-slate-400 hover:text-purple-500 transition-colors" href="/about.html">About</a>
+        <a class="text-slate-600 dark:text-slate-400 hover:text-purple-500 transition-colors" href="/services.html">Services</a>
+        <a class="text-slate-600 dark:text-slate-400 hover:text-purple-500 transition-colors" href="/blog.html">Journal</a>
+    </div>
+    <div class="hidden md:block">
+        <a href="/contact.html" class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-primary/20 transition-all scale-100 hover:scale-105 active:scale-95 duration-200 inline-block">
+            Contact Us
+        </a>
+    </div>
+
+    <!-- Mobile Menu Toggle Button -->
+    <button id="mobile-menu-btn" class="md:hidden p-2 hover:bg-purple-50/50 rounded-full transition-all">
+        <span class="material-symbols-outlined text-primary">menu</span>
+    </button>
+</div>
+
+<!-- Mobile Dropdown Menu Card -->
+<div id="mobile-menu" class="absolute top-[calc(100%+0.5rem)] right-6 w-64 bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl shadow-[0_20px_50px_rgba(108,68,178,0.2)] rounded-2xl hidden flex-col p-6 gap-4 border border-outline-variant/10 transform transition-all opacity-0 -translate-y-4 origin-top-right">
+    <a href="/" class="text-slate-900 dark:text-slate-100 font-headline font-bold text-base hover:text-primary transition-colors flex items-center gap-3">
+        <span class="material-symbols-outlined text-primary text-[20px]">home</span> Home
+    </a>
+    <a href="/about.html" class="text-slate-900 dark:text-slate-100 font-headline font-bold text-base hover:text-primary transition-colors flex items-center gap-3">
+        <span class="material-symbols-outlined text-primary text-[20px]">info</span> About
+    </a>
+    <a href="/services.html" class="text-slate-900 dark:text-slate-100 font-headline font-bold text-base hover:text-primary transition-colors flex items-center gap-3">
+        <span class="material-symbols-outlined text-primary text-[20px]">spa</span> Services
+    </a>
+    <a href="/blog.html" class="text-slate-900 dark:text-slate-100 font-headline font-bold text-base hover:text-primary transition-colors flex items-center gap-3">
+        <span class="material-symbols-outlined text-primary text-[20px]">auto_stories</span> Journal
+    </a>
+    <hr class="border-outline-variant/10 my-2">
+    <a href="/contact.html" class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-full font-bold shadow-md hover:scale-105 active:scale-95 transition-all text-center text-sm">
+        Contact Us
+    </a>
+</div>
+</nav>

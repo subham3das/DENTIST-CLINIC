@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;700;800&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-primary": "#b38bfe",
+                    "tertiary": "#4f5d6e",
+                    "outline": "#747779",
+                    "secondary-container": "#69f9e6",
+                    "on-secondary-container": "#005c54",
+                    "surface-bright": "#f5f7f9",
+                    "error-container": "#f74b6d",
+                    "surface-tint": "#6c44b2",
+                    "on-surface-variant": "#595c5e",
+                    "tertiary-dim": "#435162",
+                    "outline-variant": "#abadaf",
+                    "on-secondary-fixed": "#004841",
+                    "on-primary-fixed-variant": "#3a0380",
+                    "primary-fixed-dim": "#a67eef",
+                    "on-surface": "#2c2f31",
+                    "background": "#f5f7f9",
+                    "secondary": "#00675e",
+                    "surface-container-low": "#eef1f3",
+                    "surface": "#f5f7f9",
+                    "surface-container-highest": "#d9dde0",
+                    "error": "#b41340",
+                    "primary-dim": "#5f37a5",
+                    "on-error": "#ffefef",
+                    "tertiary-fixed-dim": "#cad8ed",
+                    "on-error-container": "#510017",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-variant": "#d9dde0",
+                    "tertiary-container": "#d8e6fc",
+                    "primary-container": "#b38bfe",
+                    "inverse-surface": "#0b0f10",
+                    "on-primary-container": "#2f006a",
+                    "on-primary": "#f8efff",
+                    "on-primary-fixed": "#000000",
+                    "on-secondary": "#c0fff4",
+                    "tertiary-fixed": "#d8e6fc",
+                    "secondary-dim": "#005a52",
+                    "surface-dim": "#d0d5d8",
+                    "inverse-on-surface": "#9a9d9f",
+                    "on-tertiary-fixed": "#354253",
+                    "on-tertiary": "#edf3ff",
+                    "on-background": "#2c2f31",
+                    "error-dim": "#a70138",
+                    "on-tertiary-fixed-variant": "#515e70",
+                    "surface-container-high": "#dfe3e6",
+                    "secondary-fixed": "#69f9e6",
+                    "primary-fixed": "#b38bfe",
+                    "on-tertiary-container": "#475466",
+                    "secondary-fixed-dim": "#59ead8",
+                    "primary": "#6c44b2",
+                    "surface-container": "#e5e9eb",
+                    "on-secondary-fixed-variant": "#00675e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Manrope"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="sticky top-0 w-full z-50 bg-slate-50/70 backdrop-blur-xl shadow-[0_10px_40px_rgba(108,68,178,0.06)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-slate-900">Clinical Radiance</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-manrope tracking-tight font-semibold text-purple-700 border-b-2 border-purple-500 pb-1" href="#">Home</a>
+<a class="font-manrope tracking-tight font-semibold text-slate-600 hover:text-purple-500 transition-colors" href="#">Services</a>
+<a class="font-manrope tracking-tight font-semibold text-slate-600 hover:text-purple-500 transition-colors" href="#">Our Mission</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden lg:flex items-center px-6 py-2.5 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-full font-semibold shadow-lg hover:scale-105 active:scale-95 transition-all duration-200">
+                    Book Appointment
+                </button>
+<button class="md:hidden p-2 text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-[921px] flex items-center px-8 py-20 overflow-hidden">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="z-10">
+<span class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label text-xs font-bold uppercase tracking-widest mb-6">Innovative Dental Care</span>
+<h1 class="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter leading-[0.9] text-on-surface mb-8">
+                    Modern <span class="text-primary italic">Precision.</span><br/>Ethereal Results.
+                </h1>
+<p class="text-xl text-on-surface-variant max-w-lg mb-10 leading-relaxed">
+                    Where clinical expertise meets aesthetic luxury. We've redefined the dentistry experience to be as relaxing as a sanctuary and as precise as a laboratory.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="px-8 py-4 bg-primary text-on-primary rounded-full font-bold shadow-xl hover:shadow-primary/20 transition-all">Explore Treatments</button>
+<button class="px-8 py-4 border border-outline-variant/30 rounded-full font-bold hover:bg-surface-container-low transition-all">View Gallery</button>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square rounded-xl overflow-hidden shadow-2xl rotate-3 scale-105">
+<img class="w-full h-full object-cover" data-alt="high-end modern dental clinic interior with soft purple ambient lighting and minimalist white furniture in a clean clinical setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQBrcw-kaNb51FvI6c5ZgKdJEglkZvow2IlmblGVB3pCxQNfoggFtDS3adnjfsDeiKLSMKIfRevhp0hz4_oxLpe8L6txaOiZVjZ6tkhv_00hDHjrzrTuasLTeIFlA7VWsX4EHXwMBd2beOwYmqSHGq2BFDFfmi2qZRC7TTM-E0hlOTF92-Ix2rQPQmJLo30Di8bxCjPifAGkTg34b-9v-YlwRIHzPdtoI_KpXcYnDiPRB0ecHIGWuhbrztR_M_XFc3oF-jpdph-Ew"/>
+</div>
+<!-- Glassmorphism Badge -->
+<div class="absolute -bottom-10 -left-10 glass-card p-8 rounded-lg shadow-2xl max-w-[280px]">
+<div class="flex items-center gap-4 mb-3">
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="font-bold text-lg">99.8% Success Rate</div>
+</div>
+<p class="text-sm text-on-surface-variant italic">"The most comfortable dental visit I've ever had. Truly ethereal." — Elena S.</p>
+</div>
+</div>
+</div>
+</header>
+<!-- Marquee preserved as requested -->
+<div class="bg-surface-container-low py-12 overflow-hidden whitespace-nowrap">
+<div class="inline-block animate-marquee flex gap-20 items-center">
+<span class="text-4xl font-black text-outline-variant/20 uppercase tracking-widest">Advanced Orthodontics</span>
+<span class="text-4xl font-black text-primary/40 uppercase tracking-widest">Ceramic Veneers</span>
+<span class="text-4xl font-black text-outline-variant/20 uppercase tracking-widest">3D Digital Imaging</span>
+<span class="text-4xl font-black text-secondary/40 uppercase tracking-widest">Sedation Dentistry</span>
+<span class="text-4xl font-black text-outline-variant/20 uppercase tracking-widest">Holistic Care</span>
+</div>
+</div>
+<!-- Asymmetric Services Grid -->
+<section class="px-8 py-32 max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="max-w-2xl">
+<h6 class="text-primary font-bold tracking-widest uppercase text-sm mb-4">Scientific Excellence</h6>
+<h2 class="text-5xl font-headline font-bold tracking-tight">Curation of Specialized <span class="text-primary">Services</span></h2>
+</div>
+<p class="text-on-surface-variant max-w-xs text-right">Each procedure is a blend of artistry and medical-grade precision.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Bento Box 1: Large -->
+<div class="md:col-span-2 bg-surface-container-lowest p-10 rounded-xl flex flex-col justify-between shadow-[0_10px_40px_rgba(0,0,0,0.02)] border border-outline-variant/10">
+<div>
+<span class="material-symbols-outlined text-primary text-5xl mb-6">dentistry</span>
+<h3 class="text-3xl font-bold mb-4">Cosmetic Mastery</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8 text-lg">Harnessing the latest in porcelain technology and digital smile design to craft results that look natural, feel effortless, and stand the test of time.</p>
+</div>
+<div class="flex gap-2">
+<span class="px-4 py-2 bg-secondary-container/30 text-on-secondary-container rounded-full text-xs font-bold uppercase">Veneers</span>
+<span class="px-4 py-2 bg-secondary-container/30 text-on-secondary-container rounded-full text-xs font-bold uppercase">Bonding</span>
+<span class="px-4 py-2 bg-secondary-container/30 text-on-secondary-container rounded-full text-xs font-bold uppercase">Whitening</span>
+</div>
+</div>
+<!-- Bento Box 2: Tall -->
+<div class="bg-primary p-10 rounded-xl text-on-primary flex flex-col justify-end relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8">
+<span class="material-symbols-outlined text-6xl opacity-20">biotech</span>
+</div>
+<h3 class="text-3xl font-bold mb-4">Surgery</h3>
+<p class="text-on-primary/80 mb-6">Expert oral surgery with a focus on minimally invasive techniques.</p>
+<button class="w-full py-4 bg-on-primary text-primary rounded-full font-bold group-hover:bg-primary-container transition-all">Learn More</button>
+</div>
+<!-- Bento Box 3: Normal -->
+<div class="bg-surface-container-low p-10 rounded-xl">
+<span class="material-symbols-outlined text-primary mb-6">child_care</span>
+<h3 class="text-2xl font-bold mb-2">Pediatric Care</h3>
+<p class="text-on-surface-variant text-sm">Gentle dental beginnings for the next generation.</p>
+</div>
+<!-- Bento Box 4: Normal -->
+<div class="bg-surface-container-low p-10 rounded-xl">
+<span class="material-symbols-outlined text-primary mb-6">orthopedics</span>
+<h3 class="text-2xl font-bold mb-2">Orthodontics</h3>
+<p class="text-on-surface-variant text-sm">Invisalign and clear aligner systems for perfect alignment.</p>
+</div>
+<!-- Bento Box 5: Highlight -->
+<div class="bg-surface-container-lowest p-10 rounded-xl shadow-[0_10px_40px_rgba(108,68,178,0.06)] border border-primary/10">
+<span class="material-symbols-outlined text-primary mb-6">health_and_safety</span>
+<h3 class="text-2xl font-bold mb-2">Total Wellness</h3>
+<p class="text-on-surface-variant text-sm">Comprehensive preventative care and holistic health assessments.</p>
+</div>
+</div>
+</section>
+<!-- Call to Action Section: Begin Your Journey -->
+<section class="px-8 py-32">
+<div class="max-w-5xl mx-auto bg-slate-900 rounded-xl p-12 md:p-24 relative overflow-hidden shadow-2xl">
+<!-- Decorative Gradient -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-primary opacity-20 blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
+<div class="relative z-10 text-center">
+<h2 class="text-4xl md:text-6xl font-headline font-extrabold text-white mb-6 tracking-tight">Begin Your Journey</h2>
+<p class="text-slate-400 text-xl md:text-2xl mb-12 max-w-2xl mx-auto font-light">Ready to transform your smile? Schedule your visit today.</p>
+<button class="px-12 py-6 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-full font-black text-xl shadow-[0_20px_50px_rgba(108,68,178,0.4)] hover:scale-105 active:scale-95 transition-all">
+                    Book Your Appointment
+                </button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full rounded-t-[3rem] mt-20 bg-slate-100 dark:bg-slate-950 font-manrope text-sm font-medium">
+<div class="flex flex-col md:flex-row justify-between items-start px-12 py-20 gap-16 max-w-7xl mx-auto w-full">
+<!-- Brand Info -->
+<div class="flex flex-col gap-6 max-w-sm">
+<div class="text-lg font-bold text-slate-800">Clinical Radiance</div>
+<p class="text-slate-500 leading-relaxed">Redefining the dental experience through innovation, luxury, and compassionate precision.</p>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm hover:translate-y-[-2px] transition-transform">
+<span class="material-symbols-outlined">public</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm hover:translate-y-[-2px] transition-transform">
+<span class="material-symbols-outlined">alternate_email</span>
+</div>
+</div>
+</div>
+<!-- About Doctor Column -->
+<div class="flex flex-col gap-6">
+<h4 class="text-purple-600 font-bold uppercase tracking-widest text-xs">About the Doctor</h4>
+<div class="flex items-center gap-4 group">
+<img class="w-12 h-12 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="portrait of a professional female dentist in high-end medical clinical setting with approachable smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhN6JQqbufjLN9Q5BblQitxHleHwJ7ychkJS0zvdjjYt4AMJ5GRrgGyKkdG63KBW_3sRf_GbV1WujMSxYJ28vGKdQ128w4UUfovA29843sARTje8Z46gNmKDPa0SWy6Twe8Uc_VimiDyp-4mmFsQzmjIQ5WILi0aDg4zjVYP3B3W0H9OsxtqZYDt_IgpEMt1AHCxpu7kRYtVL6zMKAMhEQXjQG8qFjas2z32kGnXhpWrjNkGKCoQwpT60v33iWh51VKyZ0Sz7SoGU"/>
+<div>
+<div class="text-slate-800 font-bold">Dr. Althea Vance</div>
+<div class="text-slate-500 text-xs">Lead Aesthetic Surgeon</div>
+</div>
+</div>
+<p class="text-slate-500 max-w-[200px] leading-snug italic">"Our goal is to treat your smile as a masterpiece of biological art."</p>
+</div>
+<!-- Services List -->
+<div class="flex flex-col gap-6">
+<h4 class="text-purple-600 font-bold uppercase tracking-widest text-xs">Services</h4>
+<ul class="flex flex-col gap-3">
+<li class="text-slate-500 hover:text-purple-500 transition-colors opacity-80 hover:opacity-100">Cosmetic Dentistry</li>
+<li class="text-slate-500 hover:text-purple-500 transition-colors opacity-80 hover:opacity-100">Oral Surgery</li>
+<li class="text-slate-500 hover:text-purple-500 transition-colors opacity-80 hover:opacity-100">Pediatric Care</li>
+<li class="text-slate-500 hover:text-purple-500 transition-colors opacity-80 hover:opacity-100">Orthodontics</li>
+</ul>
+</div>
+<!-- Meta Links -->
+<div class="flex flex-col gap-6">
+<h4 class="text-purple-600 font-bold uppercase tracking-widest text-xs">Practice</h4>
+<ul class="flex flex-col gap-3">
+<li class="text-slate-500 hover:text-purple-500 transition-colors opacity-80 hover:opacity-100">About the Doctor</li>
+<li class="text-slate-500 hover:text-purple-500 transition-colors opacity-80 hover:opacity-100">Privacy Policy</li>
+<li class="text-slate-500 hover:text-purple-500 transition-colors opacity-80 hover:opacity-100">Careers</li>
+</ul>
+</div>
+</div>
+<div class="w-full px-12 py-8 border-t border-slate-200/50 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-400 text-xs">
+<div>© 2024 Clinical Radiance. The Ethereal Clinic Experience.</div>
+<div class="flex gap-6">
+<a class="hover:text-primary" href="#">Instagram</a>
+<a class="hover:text-primary" href="#">LinkedIn</a>
+<a class="hover:text-primary" href="#">Twitter</a>
+</div>
+</div>
+</footer>
+</body></html>

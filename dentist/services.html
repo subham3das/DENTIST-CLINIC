@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Clinical Radiance | Premium Dental Experience</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;700;800&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/src/style.css" />
+<style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48; }
+    .glass-module, .glass-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .animate-marquee { display: flex; width: max-content; animation: marquee 30s linear infinite; }
+</style>
+<script>
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "on-background": "#2c2f31", "secondary": "#00675e", "surface-dim": "#d0d5d8", "on-tertiary": "#edf3ff", "outline": "#747779", "inverse-primary": "#b38bfe", "on-tertiary-fixed": "#354253", "background": "#f5f7f9", "inverse-on-surface": "#9a9d9f", "on-error": "#ffefef", "primary-fixed": "#b38bfe", "on-primary-fixed": "#000000", "tertiary-fixed-dim": "#cad8ed", "surface-container-highest": "#d9dde0", "surface-variant": "#d9dde0", "on-surface-variant": "#595c5e", "tertiary-container": "#d8e6fc", "on-surface": "#2c2f31", "error-dim": "#a70138", "primary-container": "#b38bfe", "on-tertiary-container": "#475466", "on-error-container": "#510017", "primary-fixed-dim": "#a67eef", "on-secondary": "#c0fff4", "error": "#b41340", "surface-tint": "#6c44b2", "surface-container-lowest": "#ffffff", "surface-bright": "#f5f7f9", "on-secondary-fixed-variant": "#00675e", "on-primary-fixed-variant": "#3a0380", "on-secondary-fixed": "#004841", "tertiary-dim": "#435162", "secondary-fixed-dim": "#59ead8", "primary-dim": "#5f37a5", "on-primary-container": "#2f006a", "primary": "#6c44b2", "outline-variant": "#abadaf", "surface": "#f5f7f9", "surface-container-high": "#dfe3e6", "secondary-fixed": "#69f9e6", "surface-container": "#e5e9eb", "secondary-container": "#69f9e6", "tertiary": "#4f5d6e", "surface-container-low": "#eef1f3", "inverse-surface": "#0b0f10", "tertiary-fixed": "#d8e6fc", "error-container": "#f74b6d", "secondary-dim": "#005a52", "on-primary": "#f8efff", "on-tertiary-fixed-variant": "#515e70", "on-secondary-container": "#005c54"
+                },
+                borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                fontFamily: { "headline": ["Manrope"], "body": ["Manrope"], "label": ["Inter"] }
+            }
+        }
+    }
+</script>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<div id="navbar-container"></div>
+
+<main>
+<!-- Hero Section -->
+<header class="relative px-8 pt-20 pb-32 max-w-screen-2xl mx-auto overflow-hidden scroll-reveal">
+<div class="relative z-10 max-w-3xl">
+<span class="text-primary font-label font-bold text-xs uppercase tracking-widest mb-4 block">Scientific Precision &amp; Aesthetic Soul</span>
+<h1 class="text-display-lg text-6xl font-headline font-extrabold tracking-tight text-on-surface mb-6 leading-tight">
+                Crafting the future of <span class="text-primary">Ethereal Smiles</span>.
+            </h1>
+<p class="text-on-surface-variant text-xl leading-relaxed max-w-2xl mb-10">
+                Beyond traditional dentistry, Lumina Dental Studio merges high-end clinical technology with a sanctuary of comfort to redefine your oral wellness journey.
+            </p>
+</div>
+<!-- Decorative Glass Element -->
+<div class="absolute -right-20 top-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl -z-10"></div>
+<div class="absolute right-8 top-20 w-1/3 aspect-square rounded-xl overflow-hidden shadow-2xl rotate-3 hidden lg:block">
+<img class="w-full h-full object-cover" data-alt="Modern high-end dental clinic interior with minimalist white furniture, soft purple ambient lighting, and large windows with natural daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMDDJGW9MvGV2wFMDlGqfgjik2gKLPe8B89YTcWQh-nU8Bi81ReVoZDhdTKxYEbE9W5MnVSs1Q7uoJlFYUvvqP4ZNPZAWj-Hyrpc-bM9ycE2o7IokjHJyo6CiUEFDtkyRtQEqeYPIfnF5n9-QHRVufzwNwwJ9_VQNxKS7dp0izGov-J553r0CTdNzowlaGtvf0fLQ21YDxR2zcsOlatqWAXYg9-sg0wYOiR1p3gK0HInStlmJ7vf7MO0NKPz74LztdKTAyIOEDKUg"/>
+</div>
+</header>
+<!-- Services Bento Grid -->
+<section class="px-8 py-20 max-w-screen-2xl mx-auto scroll-reveal">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Cosmetic Dentistry -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-xl p-10 flex flex-col justify-between shadow-[0_10px_40px_rgba(108,68,178,0.06)] relative overflow-hidden group">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-4xl text-primary mb-6" data-icon="auto_awesome">auto_awesome</span>
+<h3 class="text-3xl font-headline font-bold text-on-surface mb-4">Cosmetic Dentistry</h3>
+<p class="text-on-surface-variant text-lg max-w-md mb-8">Elevate your confidence through porcelain veneers and professional laser whitening designed for natural brilliance.</p>
+<a class="inline-flex items-center text-primary font-semibold gap-2 hover:translate-x-1 transition-transform" href="#">
+                        Explore Aesthetics <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="absolute right-0 bottom-0 w-1/2 h-full opacity-10 group-hover:opacity-20 transition-opacity">
+<img class="w-full h-full object-cover grayscale" data-alt="Close-up of a perfect white smile and aesthetic dental porcelain work in a bright laboratory setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAq1-uM2EPogEfB2_Tshc9GK2Wxi_19DwYYJn2vXpKQNSDg5bZS-k3mvmX43Xf54baYFBLaT5pSr2-pbpItn24qvqJGC2Dzq-ZUaW5eg0MTikOy9ixmx_zrWZlQxKdjeDYAJcWOS9EIGty7LO2ribvdhTwdqpSNP0GJn_qHAYHgc5mw7nVhrjdytupybbBTM-HYWny6qA4KmTpukAatH7sWNc7wn4uSAh6i8C5dkOUFze0eXDc2CUwFCk1EhNOcIhmYEksc9c6Ryg"/>
+</div>
+</div>
+<!-- Orthodontics -->
+<div class="md:col-span-4 bg-secondary-container/20 rounded-xl p-10 flex flex-col justify-between border border-secondary/10">
+<div>
+<span class="material-symbols-outlined text-4xl text-secondary mb-6" data-icon="align_items">align_items_stretch</span>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-4">Orthodontics</h3>
+<p class="text-on-surface-variant mb-6">Discrete Invisalign aligners and modern bracing solutions for a perfectly aligned architectural smile.</p>
+</div>
+<a class="text-secondary font-bold inline-flex items-center gap-2" href="#">
+                    Learn More <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+<!-- Oral Surgery -->
+<div class="md:col-span-4 bg-surface-container-low rounded-xl p-10">
+<span class="material-symbols-outlined text-4xl text-primary mb-6" data-icon="biotech">biotech</span>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-4">Oral Surgery</h3>
+<p class="text-on-surface-variant mb-8">Advanced dental implants and surgical precision focused on restorative excellence and longevity.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container-lowest rounded-full text-xs font-label text-on-surface-variant">Implants</span>
+<span class="px-3 py-1 bg-surface-container-lowest rounded-full text-xs font-label text-on-surface-variant">Extractions</span>
+</div>
+</div>
+<!-- Pediatric Care -->
+<div class="md:col-span-8 bg-tertiary-container/30 rounded-xl p-10 relative overflow-hidden flex items-center">
+<div class="w-full md:w-1/2">
+<span class="material-symbols-outlined text-4xl text-tertiary mb-6" data-icon="child_care">child_care</span>
+<h3 class="text-3xl font-headline font-bold text-on-surface mb-4">Pediatric Care</h3>
+<p class="text-on-surface-variant text-lg mb-6">Cultivating a lifetime of oral health with gentle, fear-free treatments for our youngest patients.</p>
+<button class="px-6 py-2 border border-tertiary/20 rounded-full font-label text-tertiary font-bold hover:bg-tertiary/10 transition-colors">Schedule Junior Visit</button>
+</div>
+<div class="hidden md:block absolute right-10 top-1/2 -translate-y-1/2 w-64 h-64 bg-surface-container-lowest rounded-full p-4 shadow-xl">
+<img class="w-full h-full object-cover rounded-full" data-alt="A smiling child in a bright modern dentist chair holding a toothbrush, looking happy and relaxed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZslqxJJdf1_5x3H7NPKkByy95IuoIRl0LPwgP9qZC-LpKQhFf4E63e09jY1x2T24iVmHc_nQ1mAlTFyEHNw82SyvTgZ7i8a-gm4uqYCpzUiPnofhyfj_KfOtCepEvFOGEB7ChiTjyWc1RF6KNBwVShkUXlV95v9-cFekscpvTGrw_DuCidoTIk5Sdxgj2yjah869EFUwxdZ50Munlmfihm0R1SuRkLzloeasjUQupItUEAtVYAlSoc3tAwwKJxdQExnuqkeffTOE"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Technology Section -->
+<section class="bg-surface-container-low py-32 mt-20 scroll-reveal">
+<div class="px-8 max-w-screen-2xl mx-auto">
+<div class="text-center mb-20">
+<span class="text-primary font-label font-bold text-xs uppercase tracking-widest mb-4 block">The Digital Edge</span>
+<h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface tracking-tighter">Next-Generation Precision</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="relative">
+<div class="aspect-video rounded-xl overflow-hidden shadow-2xl relative z-10">
+<img class="w-full h-full object-cover" data-alt="Close up of a high-tech 3D dental scanner in operation showing a digital map of teeth on a screen in a clinical setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDClC84iLVyZXT8bKGs7XgRpmWnAuBFN2v_mo89rfxQ21rzju3aSaMtaKwGkJIhY1w3n-Z7RR_ASiZHSc_unDrC6djTV4gkzRAxiPOKOP-yyzDmHB8St5w1LUofAPTO_WPalphfqDmS7pNabFFrA5Cdxay8awFBZfT29LcoLh48rtK740RI_6UVULUtCjI4z4HuBxWlTKeYsj38jLxUe89sROBHOkrGTI5Pnj88tx90t3p806mnxWMXzAPv23olbfoT1RgtrB1H87U"/>
+</div>
+<!-- Overlapping Glass Card -->
+<div class="absolute -bottom-10 -right-10 glass-card p-8 rounded-xl shadow-xl z-20 max-w-xs border border-white/20">
+<p class="text-primary font-bold text-2xl mb-2">99.8%</p>
+<p class="text-on-surface-variant text-sm font-medium leading-relaxed">Accuracy in dental topography through 3D scanning, eliminating the need for traditional impressions.</p>
+</div>
+</div>
+<div class="space-y-12">
+<div class="flex gap-6">
+<div class="w-16 h-16 shrink-0 bg-primary/10 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="3d_rotation">3d_rotation</span>
+</div>
+<div>
+<h4 class="text-xl font-headline font-bold text-on-surface mb-2">Intraoral 3D Scanning</h4>
+<p class="text-on-surface-variant">Instant, high-definition digital models of your teeth. No messy putty, no discomfort—just pure digital precision.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="w-16 h-16 shrink-0 bg-secondary/10 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="sanitizer">sanitizer</span>
+</div>
+<div>
+<h4 class="text-xl font-headline font-bold text-on-surface mb-2">Painless Laser Therapy</h4>
+<p class="text-on-surface-variant">Minimally invasive laser treatments that reduce recovery time and eliminate the need for needles in most soft-tissue procedures.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="w-16 h-16 shrink-0 bg-tertiary/10 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="cloud_done">cloud_done</span>
+</div>
+<div>
+<h4 class="text-xl font-headline font-bold text-on-surface mb-2">Real-time Visualization</h4>
+<p class="text-on-surface-variant">See your post-treatment results before we even begin. Our predictive modeling shows you exactly how your smile will transform.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-8 py-24 max-w-screen-xl mx-auto scroll-reveal">
+<div class="bg-primary rounded-xl p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary-container to-transparent"></div>
+<div class="relative z-10">
+<h2 class="text-on-primary text-4xl md:text-6xl font-headline font-extrabold mb-8 tracking-tight">Ready to begin your radiance?</h2>
+<p class="text-on-primary/80 text-xl mb-12 max-w-2xl mx-auto">Book a personalized consultation with our experts and experience the future of clinical dental care today.</p>
+<div class="flex flex-col md:flex-row justify-center gap-4">
+<button class="bg-surface-container-lowest text-primary px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-xl">Book Appointment</button>
+<button class="bg-primary-dim text-on-primary border border-white/20 px-10 py-4 rounded-full font-bold text-lg hover:bg-primary-dim/80 transition-colors">Virtual Consult</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+</main>
+<div id="footer-container"></div>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
